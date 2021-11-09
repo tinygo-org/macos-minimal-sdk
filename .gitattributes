@@ -1,0 +1,3 @@
+src/ linguist-vendored
+arm64/ linguist-generated
+x86_64/ linguist-generated
