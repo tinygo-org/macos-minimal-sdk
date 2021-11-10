@@ -56,7 +56,7 @@ A libc comes in two parts: a set of header files and a binary libc that the link
 
 This is unfortunately not easily possible on macOS: while the header files are open source, the binary libc (called `libSystem.B.dylib`) probably is not.
 
-The way this minimal SDK works around this is by first creating the header files from the individual libc components (downloaded from [https://opensource.apple.com](opensource.apple.com)) and then constructing a fake `libSystem.B.dylib` that only contains a list of function names without an implementation. You can't use this `libSystem.B.dylib` to run an actual binary, but you can use it to link binaries against.
+The way this minimal SDK works around this is by first creating the header files from the individual libc components (downloaded from [opensource.apple.com](https://opensource.apple.com/)) and then constructing a fake `libSystem.B.dylib` that only contains a list of function names without an implementation. You can't use this `libSystem.B.dylib` to run an actual binary, but you can use it to link binaries against.
 
 ### Why would you do this?
 
