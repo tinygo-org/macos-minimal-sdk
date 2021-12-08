@@ -13,3 +13,6 @@
 #include <sys/types.h>
 #include <time.h>
 #include <unistd.h>
+
+// These symbols must be declared manually.
+extern char **environ;

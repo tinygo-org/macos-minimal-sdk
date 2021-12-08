@@ -46,6 +46,9 @@ ___infl:
 .global ___math_errhandling
 ___math_errhandling:
 
+.global ___mb_cur_max
+___mb_cur_max:
+
 .global ___nan
 ___nan:
 
@@ -60,6 +63,15 @@ ___sputc:
 
 .global ___srget
 ___srget:
+
+.global ___stderrp
+___stderrp:
+
+.global ___stdinp
+___stdinp:
+
+.global ___stdoutp
+___stdoutp:
 
 .global ___svfscanf
 ___svfscanf:
@@ -370,6 +382,9 @@ _ctime_r:
 .global _daemon$1050
 _daemon$1050:
 
+.global _daylight
+_daylight:
+
 .global _devname
 _devname:
 
@@ -405,6 +420,9 @@ _encrypt$UNIX2003:
 
 .global _endusershell
 _endusershell:
+
+.global _environ
+_environ:
 
 .global _erand48
 _erand48:
@@ -804,6 +822,9 @@ _getcwd:
 
 .global _getdate
 _getdate:
+
+.global _getdate_err
+_getdate_err:
 
 .global _getdelim
 _getdelim:
@@ -1369,6 +1390,21 @@ _openat:
 .global _openx_np
 _openx_np:
 
+.global _optarg
+_optarg:
+
+.global _opterr
+_opterr:
+
+.global _optind
+_optind:
+
+.global _optopt
+_optopt:
+
+.global _optreset
+_optreset:
+
 .global _pathconf
 _pathconf:
 
@@ -1738,6 +1774,9 @@ _shm_unlink:
 .global _signal
 _signal:
 
+.global _signgam
+_signgam:
+
 .global _significand
 _significand:
 
@@ -1951,6 +1990,9 @@ _strtouq:
 .global _strxfrm
 _strxfrm:
 
+.global _suboptarg
+_suboptarg:
+
 .global _swab
 _swab:
 
@@ -1968,6 +2010,12 @@ _sync:
 
 .global _sync_volume_np
 _sync_volume_np:
+
+.global _sys_errlist
+_sys_errlist:
+
+.global _sys_nerr
+_sys_nerr:
 
 .global _syscall
 _syscall:
@@ -2029,6 +2077,9 @@ _timelocal:
 .global _timespec_get
 _timespec_get:
 
+.global _timezone$UNIX2003
+_timezone$UNIX2003:
+
 .global _timingsafe_bcmp
 _timingsafe_bcmp:
 
@@ -2058,6 +2109,9 @@ _ttyname_r$UNIX2003:
 
 .global _ttyslot
 _ttyslot:
+
+.global _tzname
+_tzname:
 
 .global _tzset
 _tzset:

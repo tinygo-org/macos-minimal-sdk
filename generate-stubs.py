@@ -44,7 +44,7 @@ def generateStubs(sysroot, outfile, target):
             print(diag)
         sys.exit(1)
     for child in tu.cursor.get_children():
-        if child.kind != clang.cindex.CursorKind.FUNCTION_DECL:
+        if child.kind != clang.cindex.CursorKind.FUNCTION_DECL and child.kind != clang.cindex.CursorKind.VAR_DECL:
             continue
         if child.linkage != clang.cindex.LinkageKind.EXTERNAL:
             continue
