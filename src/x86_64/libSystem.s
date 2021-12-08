@@ -139,6 +139,12 @@ _arc4random_stir:
 .global _arc4random_uniform
 _arc4random_uniform:
 
+.global _asctime
+_asctime:
+
+.global _asctime_r
+_asctime_r:
+
 .global _asin
 _asin:
 
@@ -295,6 +301,21 @@ _chroot:
 .global _clearerr
 _clearerr:
 
+.global _clock
+_clock:
+
+.global _clock_getres
+_clock_getres:
+
+.global _clock_gettime
+_clock_gettime:
+
+.global _clock_gettime_nsec_np
+_clock_gettime_nsec_np:
+
+.global _clock_settime
+_clock_settime:
+
 .global _close
 _close:
 
@@ -340,6 +361,12 @@ _ctermid:
 .global _ctermid_r
 _ctermid_r:
 
+.global _ctime
+_ctime:
+
+.global _ctime_r
+_ctime_r:
+
 .global _daemon
 _daemon:
 
@@ -348,6 +375,9 @@ _devname:
 
 .global _devname_r
 _devname_r:
+
+.global _difftime
+_difftime:
 
 .global _div
 _div:
@@ -772,6 +802,9 @@ _getchar_unlocked:
 .global _getcwd
 _getcwd:
 
+.global _getdate
+_getdate:
+
 .global _getdelim
 _getdelim:
 
@@ -891,6 +924,12 @@ _getwd:
 
 .global _getwgroups_np
 _getwgroups_np:
+
+.global _gmtime
+_gmtime:
+
+.global _gmtime_r
+_gmtime_r:
 
 .global _grantpt
 _grantpt:
@@ -1020,6 +1059,12 @@ _llroundf:
 
 .global _llroundl
 _llroundl:
+
+.global _localtime
+_localtime:
+
+.global _localtime_r
+_localtime_r:
 
 .global _lockf
 _lockf:
@@ -1222,6 +1267,9 @@ _mkstempsat_np:
 .global _mktemp
 _mktemp:
 
+.global _mktime
+_mktime:
+
 .global _mlock
 _mlock:
 
@@ -1266,6 +1314,9 @@ _nanf:
 
 .global _nanl
 _nanl:
+
+.global _nanosleep
+_nanosleep:
 
 .global _nearbyint
 _nearbyint:
@@ -1335,6 +1386,9 @@ _pipe:
 
 .global _popen
 _popen:
+
+.global _posix2time
+_posix2time:
 
 .global _posix_madvise
 _posix_madvise:
@@ -1795,6 +1849,9 @@ _strerror:
 .global _strerror_r
 _strerror_r:
 
+.global _strftime
+_strftime:
+
 .global _strlcat
 _strlcat:
 
@@ -1830,6 +1887,9 @@ _strnstr:
 
 .global _strpbrk
 _strpbrk:
+
+.global _strptime
+_strptime:
 
 .global _strrchr
 _strrchr:
@@ -1954,6 +2014,21 @@ _tgammaf:
 .global _tgammal
 _tgammal:
 
+.global _time
+_time:
+
+.global _time2posix
+_time2posix:
+
+.global _timegm
+_timegm:
+
+.global _timelocal
+_timelocal:
+
+.global _timespec_get
+_timespec_get:
+
 .global _timingsafe_bcmp
 _timingsafe_bcmp:
 
@@ -1983,6 +2058,12 @@ _ttyname_r:
 
 .global _ttyslot
 _ttyslot:
+
+.global _tzset
+_tzset:
+
+.global _tzsetwall
+_tzsetwall:
 
 .global _ualarm
 _ualarm:
