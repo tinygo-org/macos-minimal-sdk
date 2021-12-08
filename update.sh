@@ -127,6 +127,9 @@ find $include -type f -name '*.h' -print0 | xargs -0 perl -p0i -e 's%//Begin-Lib
 # Because we aren't targeting iPhones, we can set them all to 0.
 perl -pi -e 's/\@CONFIG_(EMBEDDED|IPHONE|IPHONE_SIMULATOR)\@ +/0/g' $include/TargetConditionals.h
 
+# Remove PLATFORM_MacOSX ifdef guards. We're always on MacOSX.
+perl -pi -e 's%^(#ifdef PLATFORM_MacOSX|#endif /\* PLATFORM_MacOSX \*/)\n%%g' $include/sys/cdefs.h
+
 # Now generate the assembly stubs for libSystem.B.dylib.
 rm -f $sysroot/x86_64/libSystem.s $sysroot/arm64/libSystem.s
 mkdir -p $sysroot/x86_64 $sysroot/arm64
