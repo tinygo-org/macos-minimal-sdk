@@ -286,8 +286,8 @@ _chdir:
 .global _chflags
 _chflags:
 
-.global _chmod
-_chmod:
+.global _chmod$UNIX2003
+_chmod$UNIX2003:
 
 .global _chmodx_np
 _chmodx_np:
@@ -301,8 +301,8 @@ _chroot:
 .global _clearerr
 _clearerr:
 
-.global _clock
-_clock:
+.global _clock$UNIX2003
+_clock$UNIX2003:
 
 .global _clock_getres
 _clock_getres:
@@ -316,11 +316,11 @@ _clock_gettime_nsec_np:
 .global _clock_settime
 _clock_settime:
 
-.global _close
-_close:
+.global _close$UNIX2003
+_close$UNIX2003:
 
-.global _confstr
-_confstr:
+.global _confstr$UNIX2003
+_confstr$UNIX2003:
 
 .global _copysign
 _copysign:
@@ -349,8 +349,8 @@ _coshl:
 .global _cosl
 _cosl:
 
-.global _creat
-_creat:
+.global _creat$UNIX2003
+_creat$UNIX2003:
 
 .global _crypt
 _crypt:
@@ -367,8 +367,8 @@ _ctime:
 .global _ctime_r
 _ctime_r:
 
-.global _daemon
-_daemon:
+.global _daemon$1050
+_daemon$1050:
 
 .global _devname
 _devname:
@@ -400,8 +400,8 @@ _dup2:
 .global _ecvt
 _ecvt:
 
-.global _encrypt
-_encrypt:
+.global _encrypt$UNIX2003
+_encrypt$UNIX2003:
 
 .global _endusershell
 _endusershell:
@@ -499,8 +499,8 @@ _fchdir:
 .global _fchflags
 _fchflags:
 
-.global _fchmod
-_fchmod:
+.global _fchmod$UNIX2003
+_fchmod$UNIX2003:
 
 .global _fchmodat
 _fchmodat:
@@ -517,8 +517,8 @@ _fchownat:
 .global _fclose
 _fclose:
 
-.global _fcntl
-_fcntl:
+.global _fcntl$UNIX2003
+_fcntl$UNIX2003:
 
 .global _fcvt
 _fcvt:
@@ -532,8 +532,8 @@ _fdimf:
 .global _fdiml
 _fdiml:
 
-.global _fdopen
-_fdopen:
+.global _fdopen$UNIX2003
+_fdopen$UNIX2003:
 
 .global _feof
 _feof:
@@ -667,8 +667,8 @@ _fmodl:
 .global _fmtcheck
 _fmtcheck:
 
-.global _fopen
-_fopen:
+.global _fopen$UNIX2003
+_fopen$UNIX2003:
 
 .global _fork
 _fork:
@@ -685,8 +685,8 @@ _fpurge:
 .global _fputc
 _fputc:
 
-.global _fputs
-_fputs:
+.global _fputs$UNIX2003
+_fputs$UNIX2003:
 
 .global _fread
 _fread:
@@ -694,8 +694,8 @@ _fread:
 .global _free
 _free:
 
-.global _freopen
-_freopen:
+.global _freopen$UNIX2003
+_freopen$UNIX2003:
 
 .global _frexp
 _frexp:
@@ -724,23 +724,23 @@ _fsetattrlist:
 .global _fsetpos
 _fsetpos:
 
-.global _fstat
-_fstat:
+.global _fstat$INODE64
+_fstat$INODE64:
 
 .global _fstat64
 _fstat64:
 
-.global _fstatat
-_fstatat:
+.global _fstatat$INODE64
+_fstatat$INODE64:
 
 .global _fstatx64_np
 _fstatx64_np:
 
-.global _fstatx_np
-_fstatx_np:
+.global _fstatx_np$INODE64
+_fstatx_np$INODE64:
 
-.global _fsync
-_fsync:
+.global _fsync$UNIX2003
+_fsync$UNIX2003:
 
 .global _fsync_volume_np
 _fsync_volume_np:
@@ -766,8 +766,8 @@ _funopen:
 .global _futimens
 _futimens:
 
-.global _fwrite
-_fwrite:
+.global _fwrite$UNIX2003
+_fwrite$UNIX2003:
 
 .global _gamma
 _gamma:
@@ -775,8 +775,8 @@ _gamma:
 .global _gcvt
 _gcvt:
 
-.global _getattrlist
-_getattrlist:
+.global _getattrlist$UNIX2003
+_getattrlist$UNIX2003:
 
 .global _getattrlistat
 _getattrlistat:
@@ -862,8 +862,8 @@ _getlogin_r:
 .global _getmode
 _getmode:
 
-.global _getopt
-_getopt:
+.global _getopt$UNIX2003
+_getopt$UNIX2003:
 
 .global _getpagesize
 _getpagesize:
@@ -892,8 +892,8 @@ _getpriority:
 .global _getprogname
 _getprogname:
 
-.global _getrlimit
-_getrlimit:
+.global _getrlimit$UNIX2003
+_getrlimit$UNIX2003:
 
 .global _getrusage
 _getrusage:
@@ -1003,8 +1003,8 @@ _lchflags:
 .global _lchmod
 _lchmod:
 
-.global _lchown
-_lchown:
+.global _lchown$UNIX2003
+_lchown$UNIX2003:
 
 .global _lcong48
 _lcong48:
@@ -1066,8 +1066,8 @@ _localtime:
 .global _localtime_r
 _localtime_r:
 
-.global _lockf
-_lockf:
+.global _lockf$UNIX2003
+_lockf$UNIX2003:
 
 .global _log
 _log:
@@ -1138,8 +1138,8 @@ _lroundl:
 .global _lseek
 _lseek:
 
-.global _lstat
-_lstat:
+.global _lstat$INODE64
+_lstat$INODE64:
 
 .global _lstat64
 _lstat64:
@@ -1147,8 +1147,8 @@ _lstat64:
 .global _lstatx64_np
 _lstatx64_np:
 
-.global _lstatx_np
-_lstatx_np:
+.global _lstatx_np$INODE64
+_lstatx_np$INODE64:
 
 .global _madvise
 _madvise:
@@ -1267,8 +1267,8 @@ _mkstempsat_np:
 .global _mktemp
 _mktemp:
 
-.global _mktime
-_mktime:
+.global _mktime$UNIX2003
+_mktime$UNIX2003:
 
 .global _mlock
 _mlock:
@@ -1276,8 +1276,8 @@ _mlock:
 .global _mlockall
 _mlockall:
 
-.global _mmap
-_mmap:
+.global _mmap$UNIX2003
+_mmap$UNIX2003:
 
 .global _modf
 _modf:
@@ -1288,14 +1288,14 @@ _modff:
 .global _modfl
 _modfl:
 
-.global _mprotect
-_mprotect:
+.global _mprotect$UNIX2003
+_mprotect$UNIX2003:
 
 .global _mrand48
 _mrand48:
 
-.global _msync
-_msync:
+.global _msync$UNIX2003
+_msync$UNIX2003:
 
 .global _munlock
 _munlock:
@@ -1303,8 +1303,8 @@ _munlock:
 .global _munlockall
 _munlockall:
 
-.global _munmap
-_munmap:
+.global _munmap$UNIX2003
+_munmap$UNIX2003:
 
 .global _nan
 _nan:
@@ -1315,8 +1315,8 @@ _nanf:
 .global _nanl
 _nanl:
 
-.global _nanosleep
-_nanosleep:
+.global _nanosleep$UNIX2003
+_nanosleep$UNIX2003:
 
 .global _nearbyint
 _nearbyint:
@@ -1348,14 +1348,14 @@ _nexttowardl:
 .global _nfssvc
 _nfssvc:
 
-.global _nice
-_nice:
+.global _nice$UNIX2003
+_nice$UNIX2003:
 
 .global _nrand48
 _nrand48:
 
-.global _open
-_open:
+.global _open$UNIX2003
+_open$UNIX2003:
 
 .global _open_dprotected_np
 _open_dprotected_np:
@@ -1372,8 +1372,8 @@ _openx_np:
 .global _pathconf
 _pathconf:
 
-.global _pause
-_pause:
+.global _pause$UNIX2003
+_pause$UNIX2003:
 
 .global _pclose
 _pclose:
@@ -1384,8 +1384,8 @@ _perror:
 .global _pipe
 _pipe:
 
-.global _popen
-_popen:
+.global _popen$UNIX2003
+_popen$UNIX2003:
 
 .global _posix2time
 _posix2time:
@@ -1408,8 +1408,8 @@ _powf:
 .global _powl
 _powl:
 
-.global _pread
-_pread:
+.global _pread$UNIX2003
+_pread$UNIX2003:
 
 .global _printf
 _printf:
@@ -1417,8 +1417,8 @@ _printf:
 .global _profil
 _profil:
 
-.global _pselect
-_pselect:
+.global _pselect$1050
+_pselect$1050:
 
 .global _psort
 _psort:
@@ -1453,8 +1453,8 @@ _putchar:
 .global _putchar_unlocked
 _putchar_unlocked:
 
-.global _putenv
-_putenv:
+.global _putenv$UNIX2003
+_putenv$UNIX2003:
 
 .global _puts
 _puts:
@@ -1462,8 +1462,8 @@ _puts:
 .global _putw
 _putw:
 
-.global _pwrite
-_pwrite:
+.global _pwrite$UNIX2003
+_pwrite$UNIX2003:
 
 .global _qsort
 _qsort:
@@ -1492,8 +1492,8 @@ _rcmd:
 .global _rcmd_af
 _rcmd_af:
 
-.global _read
-_read:
+.global _read$UNIX2003
+_read$UNIX2003:
 
 .global _readlink
 _readlink:
@@ -1507,8 +1507,8 @@ _realloc:
 .global _reallocf
 _reallocf:
 
-.global _realpath
-_realpath:
+.global _realpath$DARWIN_EXTSN
+_realpath$DARWIN_EXTSN:
 
 .global _reboot
 _reboot:
@@ -1627,11 +1627,11 @@ _searchfs:
 .global _seed48
 _seed48:
 
-.global _select
-_select:
+.global _select$1050
+_select$1050:
 
-.global _setattrlist
-_setattrlist:
+.global _setattrlist$UNIX2003
+_setattrlist$UNIX2003:
 
 .global _setattrlistat
 _setattrlistat:
@@ -1648,8 +1648,8 @@ _setdomainname:
 .global _setegid
 _setegid:
 
-.global _setenv
-_setenv:
+.global _setenv$UNIX2003
+_setenv$UNIX2003:
 
 .global _seteuid
 _seteuid:
@@ -1669,8 +1669,8 @@ _sethostname:
 .global _setiopolicy_np
 _setiopolicy_np:
 
-.global _setkey
-_setkey:
+.global _setkey$UNIX2003
+_setkey$UNIX2003:
 
 .global _setlinebuf
 _setlinebuf:
@@ -1678,14 +1678,14 @@ _setlinebuf:
 .global _setlogin
 _setlogin:
 
-.global _setmode
-_setmode:
+.global _setmode$UNIX2003
+_setmode$UNIX2003:
 
 .global _setpgid
 _setpgid:
 
-.global _setpgrp
-_setpgrp:
+.global _setpgrp$UNIX2003
+_setpgrp$UNIX2003:
 
 .global _setpriority
 _setpriority:
@@ -1693,17 +1693,17 @@ _setpriority:
 .global _setprogname
 _setprogname:
 
-.global _setregid
-_setregid:
+.global _setregid$UNIX2003
+_setregid$UNIX2003:
 
-.global _setreuid
-_setreuid:
+.global _setreuid$UNIX2003
+_setreuid$UNIX2003:
 
 .global _setrgid
 _setrgid:
 
-.global _setrlimit
-_setrlimit:
+.global _setrlimit$UNIX2003
+_setrlimit$UNIX2003:
 
 .global _setruid
 _setruid:
@@ -1759,8 +1759,8 @@ _sinhl:
 .global _sinl
 _sinl:
 
-.global _sleep
-_sleep:
+.global _sleep$UNIX2003
+_sleep$UNIX2003:
 
 .global _snprintf
 _snprintf:
@@ -1798,8 +1798,8 @@ _srandomdev:
 .global _sscanf
 _sscanf:
 
-.global _stat
-_stat:
+.global _stat$INODE64
+_stat$INODE64:
 
 .global _stat64
 _stat64:
@@ -1807,8 +1807,8 @@ _stat64:
 .global _statx64_np
 _statx64_np:
 
-.global _statx_np
-_statx_np:
+.global _statx_np$INODE64
+_statx_np$INODE64:
 
 .global _stpcpy
 _stpcpy:
@@ -1843,14 +1843,14 @@ _strcspn:
 .global _strdup
 _strdup:
 
-.global _strerror
-_strerror:
+.global _strerror$UNIX2003
+_strerror$UNIX2003:
 
 .global _strerror_r
 _strerror_r:
 
-.global _strftime
-_strftime:
+.global _strftime$UNIX2003
+_strftime$UNIX2003:
 
 .global _strlcat
 _strlcat:
@@ -1888,8 +1888,8 @@ _strnstr:
 .global _strpbrk
 _strpbrk:
 
-.global _strptime
-_strptime:
+.global _strptime$UNIX2003
+_strptime$UNIX2003:
 
 .global _strrchr
 _strrchr:
@@ -1909,11 +1909,11 @@ _strspn:
 .global _strstr
 _strstr:
 
-.global _strtod
-_strtod:
+.global _strtod$UNIX2003
+_strtod$UNIX2003:
 
-.global _strtof
-_strtof:
+.global _strtof$UNIX2003
+_strtof$UNIX2003:
 
 .global _strtofflags
 _strtofflags:
@@ -1975,8 +1975,8 @@ _syscall:
 .global _sysconf
 _sysconf:
 
-.global _system
-_system:
+.global _system$UNIX2003
+_system$UNIX2003:
 
 .global _tan
 _tan:
@@ -2002,8 +2002,8 @@ _tcgetpgrp:
 .global _tcsetpgrp
 _tcsetpgrp:
 
-.global _tempnam
-_tempnam:
+.global _tempnam$UNIX2003
+_tempnam$UNIX2003:
 
 .global _tgamma
 _tgamma:
@@ -2053,8 +2053,8 @@ _truncl:
 .global _ttyname
 _ttyname:
 
-.global _ttyname_r
-_ttyname_r:
+.global _ttyname_r$UNIX2003
+_ttyname_r$UNIX2003:
 
 .global _ttyslot
 _ttyslot:
@@ -2089,14 +2089,14 @@ _unlinkat:
 .global _unlockpt
 _unlockpt:
 
-.global _unsetenv
-_unsetenv:
+.global _unsetenv$UNIX2003
+_unsetenv$UNIX2003:
 
 .global _unwhiteout
 _unwhiteout:
 
-.global _usleep
-_usleep:
+.global _usleep$UNIX2003
+_usleep$UNIX2003:
 
 .global _utimensat
 _utimensat:
@@ -2134,8 +2134,8 @@ _vsprintf:
 .global _vsscanf
 _vsscanf:
 
-.global _wait
-_wait:
+.global _wait$UNIX2003
+_wait$UNIX2003:
 
 .global _wait3
 _wait3:
@@ -2143,11 +2143,11 @@ _wait3:
 .global _wait4
 _wait4:
 
-.global _waitid
-_waitid:
+.global _waitid$UNIX2003
+_waitid$UNIX2003:
 
-.global _waitpid
-_waitpid:
+.global _waitpid$UNIX2003
+_waitpid$UNIX2003:
 
 .global _wcstombs
 _wcstombs:
@@ -2155,8 +2155,8 @@ _wcstombs:
 .global _wctomb
 _wctomb:
 
-.global _write
-_write:
+.global _write$UNIX2003
+_write$UNIX2003:
 
 .global _y0
 _y0:

@@ -48,7 +48,7 @@ def generateStubs(sysroot, outfile, target):
             continue
         if child.linkage != clang.cindex.LinkageKind.EXTERNAL:
             continue
-        symbols.add('_' + child.spelling)
+        symbols.add(child.mangled_name)
 
     # Now write a stub assembly file that defines these files as stubs. They
     # can't be called, they're only provided to let the linker know that these
