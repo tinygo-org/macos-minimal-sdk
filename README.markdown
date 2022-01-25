@@ -60,7 +60,7 @@ The way this minimal SDK works around this is by first creating the header files
 
 ### Why would you do this?
 
-It may be useful when you develop software on Linux or Windows but want to build it for Windows. One example might be CI: Linux is currently still more widely available (and usually cheaper!) than MacOS VMs.
+It may be useful when you develop software on Linux or Windows but want to build it for MacOS. One example might be CI: Linux is currently still more widely available (and usually cheaper!) than MacOS VMs.
 
 ## Updating
 
