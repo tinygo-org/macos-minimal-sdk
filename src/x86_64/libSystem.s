@@ -52,6 +52,9 @@ ___mb_cur_max:
 .global ___nan
 ___nan:
 
+.global ___opendir2$INODE64
+___opendir2$INODE64:
+
 .global ___snprintf_chk
 ___snprintf_chk:
 
@@ -135,6 +138,9 @@ _aligned_alloc:
 
 .global _alloca
 _alloca:
+
+.global _alphasort$INODE64
+_alphasort$INODE64:
 
 .global _arc4random
 _arc4random:
@@ -331,6 +337,9 @@ _clock_settime:
 .global _close
 _close:
 
+.global _closedir
+_closedir:
+
 .global _confstr
 _confstr:
 
@@ -393,6 +402,9 @@ _devname_r:
 
 .global _difftime
 _difftime:
+
+.global _dirfd
+_dirfd:
 
 .global _div
 _div:
@@ -552,6 +564,9 @@ _fdiml:
 
 .global _fdopen
 _fdopen:
+
+.global _fdopendir$INODE64
+_fdopendir$INODE64:
 
 .global _feof
 _feof:
@@ -828,6 +843,9 @@ _getdate_err:
 
 .global _getdelim
 _getdelim:
+
+.global _getdirentries_is_not_available_when_64_bit_inodes_are_in_effect
+_getdirentries_is_not_available_when_64_bit_inodes_are_in_effect:
 
 .global _getdirentriesattr
 _getdirentriesattr:
@@ -1387,6 +1405,9 @@ _open_memstream:
 .global _openat
 _openat:
 
+.global _opendir$INODE64
+_opendir$INODE64:
+
 .global _openx_np
 _openx_np:
 
@@ -1531,6 +1552,12 @@ _rcmd_af:
 .global _read
 _read:
 
+.global _readdir$INODE64
+_readdir$INODE64:
+
+.global _readdir_r$INODE64
+_readdir_r$INODE64:
+
 .global _readlink
 _readlink:
 
@@ -1587,6 +1614,9 @@ _revoke:
 
 .global _rewind
 _rewind:
+
+.global _rewinddir$INODE64
+_rewinddir$INODE64:
 
 .global _rindex
 _rindex:
@@ -1654,6 +1684,12 @@ _scalbnf:
 .global _scalbnl
 _scalbnl:
 
+.global _scandir$INODE64
+_scandir$INODE64:
+
+.global _scandir_b$INODE64
+_scandir_b$INODE64:
+
 .global _scanf
 _scanf:
 
@@ -1662,6 +1698,9 @@ _searchfs:
 
 .global _seed48
 _seed48:
+
+.global _seekdir$INODE64
+_seekdir$INODE64:
 
 .global _select$1050
 _select$1050:
@@ -2049,6 +2088,9 @@ _tcgetpgrp:
 
 .global _tcsetpgrp
 _tcsetpgrp:
+
+.global _telldir$INODE64
+_telldir$INODE64:
 
 .global _tempnam
 _tempnam:

@@ -52,6 +52,7 @@ tar -C $include           --strip-components=2 -xf download/$xnu.tar.gz         
                                                                                             $xnu/bsd/machine/types.h \
                                                                                             $xnu/bsd/sys/appleapiopts.h \
                                                                                             $xnu/bsd/sys/cdefs.h \
+                                                                                            $xnu/bsd/sys/dirent.h \
                                                                                             $xnu/bsd/sys/_endian.h \
                                                                                             $xnu/bsd/sys/errno.h \
                                                                                             $xnu/bsd/sys/fcntl.h \

@@ -1,6 +1,7 @@
 // Include all header files for libSystem.dylib, so all the stubs are
 // generated. Add more headers as needed.
 
+#include <dirent.h>
 #include <fcntl.h>
 #include <math.h>
 #include <stdio.h>
