@@ -2,7 +2,7 @@ include versions.inc
 
 SYSROOTS = sysroot-macos-x86_64 sysroot-macos-arm64
 
-CLANG ?= clang-13
+CLANG ?= clang
 
 DYLDFLAGS = \
     -dynamiclib \
