@@ -33,11 +33,14 @@ wget -P download --no-clobber --no-verbose \
 # Order matters: some files are duplicated in different tarballs.
 rm -rf $include
 mkdir -p $include/sys
+mkdir -p $include/x86_64
+mkdir -p $include/arm64
 mkdir -p $sysroot/usr/local/libexec
 tar -C $sysroot/usr/local/libexec --strip-components=1 -xf "download/$AvailabilityVersions.tar.gz" "AvailabilityVersions-$AvailabilityVersions/availability.pl"
 tar -C $include           --strip-components=1 -xf "download/$CarbonHeaders.tar.gz" "CarbonHeaders-$CarbonHeaders/TargetConditionals.h"
 tar -C $include           --strip-components=2 -xf "download/$Libc.tar.gz"          "Libc-$Libc/include"
-tar -C $include           --strip-components=3 -xf "download/$Libm.tar.gz"          "Libm-$Libm/Source/Intel/math.h"
+tar -C $include/x86_64    --strip-components=3 -xf "download/$Libm.tar.gz"          "Libm-$Libm/Source/Intel/math.h"
+tar -C $include/arm64     --strip-components=3 -xf "download/$Libm.tar.gz"          "Libm-$Libm/Source/ARM/math.h"
 tar -C $include           --strip-components=2 -xf "download/$libmalloc.tar.gz"     "libmalloc-$libmalloc/include/malloc"
 tar -C $include/sys       --strip-components=3 -xf "download/$libpthread.tar.gz"    "libpthread-$libpthread/include/sys/_pthread"
 tar -C $include           --strip-components=3 -xf "download/$xnu.tar.gz"           "xnu-$xnu/libsyscall/wrappers/gethostuuid.h"

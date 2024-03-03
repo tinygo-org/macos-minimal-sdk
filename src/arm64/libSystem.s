@@ -28,29 +28,17 @@ ___error:
 .global ___fpclassify
 ___fpclassify:
 
-.global ___fpclassifyd
-___fpclassifyd:
-
 .global ___fpclassifyf
 ___fpclassifyf:
 
-.global ___inf
-___inf:
-
-.global ___inff
-___inff:
-
-.global ___infl
-___infl:
+.global ___fpclassifyl
+___fpclassifyl:
 
 .global ___math_errhandling
 ___math_errhandling:
 
 .global ___mb_cur_max
 ___mb_cur_max:
-
-.global ___nan
-___nan:
 
 .global ___opendir2
 ___opendir2:
@@ -415,9 +403,6 @@ _dprintf:
 .global _drand48
 _drand48:
 
-.global _drem
-_drem:
-
 .global _dup
 _dup:
 
@@ -631,9 +616,6 @@ _filesec_set_property:
 .global _filesec_unset_property
 _filesec_unset_property:
 
-.global _finite
-_finite:
-
 .global _flock
 _flock:
 
@@ -795,9 +777,6 @@ _futimens:
 
 .global _fwrite
 _fwrite:
-
-.global _gamma
-_gamma:
 
 .global _gcvt
 _gcvt:
@@ -1182,9 +1161,6 @@ _madvise:
 
 .global _malloc
 _malloc:
-
-.global _matherr
-_matherr:
 
 .global _mblen
 _mblen:
@@ -1618,9 +1594,6 @@ _rintf:
 .global _rintl
 _rintl:
 
-.global _rinttol
-_rinttol:
-
 .global _rmdir
 _rmdir:
 
@@ -1632,9 +1605,6 @@ _roundf:
 
 .global _roundl
 _roundl:
-
-.global _roundtol
-_roundtol:
 
 .global _rpmatch
 _rpmatch:
@@ -1803,9 +1773,6 @@ _signal:
 
 .global _signgam
 _signgam:
-
-.global _significand
-_significand:
 
 .global _sin
 _sin:

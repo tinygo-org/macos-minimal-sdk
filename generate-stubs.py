@@ -36,7 +36,8 @@ def generateStubs(sysroot, outfile, target):
 
     # Parse the src/libSystem.h file to get a list of functions declared in libSystem.
     index = clang.cindex.Index.create()
-    args = args=['--sysroot='+sysroot, '-Werror', '--target='+target]
+    arch = target.split('-')[0]
+    args = args=['--sysroot='+sysroot, '-isystem', sysroot+'/usr/include/'+arch, '-Werror', '--target='+target]
     tu = index.parse('src/libSystem.h', args=args)
     if len(tu.diagnostics):
         print('failed to extract function stubs using %s:' % args)
