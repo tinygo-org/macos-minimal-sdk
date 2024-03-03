@@ -2,7 +2,7 @@ include versions.inc
 
 SYSROOTS = sysroot-macos-x86_64 sysroot-macos-arm64
 
-CLANG ?= clang-13
+CLANG ?= clang
 
 DYLDFLAGS = \
     -dynamiclib \
@@ -26,12 +26,16 @@ sysroot-%/usr/include: update.sh src/usr/include
 
 sysroot-macos-x86_64: sysroot-macos-x86_64/usr/include sysroot-macos-x86_64/usr/lib/libSystem.dylib
 sysroot-macos-x86_64/usr/lib/libSystem.dylib:
+	mkdir -p sysroot-macos-x86_64/usr/include
+	cp -rp src/usr/include/x86_64/* sysroot-macos-x86_64/usr/include
 	mkdir -p $(dir $@)
 	$(CLANG) $(DYLDFLAGS) --target=x86_64-apple-macos10.12 -o $(dir $@)/libSystem.B.dylib src/x86_64/libSystem.s
 	ln -sf libSystem.B.dylib $@
 
 sysroot-macos-arm64: sysroot-macos-arm64/usr/include sysroot-macos-arm64/usr/lib/libSystem.dylib
 sysroot-macos-arm64/usr/lib/libSystem.dylib:
+	mkdir -p sysroot-macos-arm64/usr/include
+	cp -rp src/usr/include/arm64/* sysroot-macos-arm64/usr/include
 	mkdir -p $(dir $@)
 	$(CLANG) $(DYLDFLAGS) --target=arm64-apple-macos11 -o $(dir $@)/libSystem.B.dylib src/x86_64/libSystem.s
 	ln -sf libSystem.B.dylib $@
