@@ -18,8 +18,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: install Clang
+        # Note: picking LLVM 15 because that's the one currently included in
+        # macos-latest. This probably needs an update in the future.
+        run: brew install llvm@15
       - name: Run tests
-        run: make test CLANG=$(brew --prefix llvm)/bin/clang
+        run: make test CLANG=$(brew --prefix llvm@15)/bin/clang
   Test-Windows:
     runs-on: windows-latest
     steps:
