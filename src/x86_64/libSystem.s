@@ -55,6 +55,9 @@ ___nan:
 .global ___opendir2$INODE64
 ___opendir2$INODE64:
 
+.global ___sigbits
+___sigbits:
+
 .global ___snprintf_chk
 ___snprintf_chk:
 
@@ -237,6 +240,9 @@ _bcopy:
 
 .global _brk
 _brk:
+
+.global _bsd_signal
+_bsd_signal:
 
 .global _bsearch
 _bsearch:
@@ -1030,6 +1036,12 @@ _jn:
 .global _jrand48
 _jrand48:
 
+.global _kill
+_kill:
+
+.global _killpg
+_killpg:
+
 .global _l64a
 _l64a:
 
@@ -1477,6 +1489,9 @@ _profil:
 .global _pselect$1050
 _pselect$1050:
 
+.global _psignal
+_psignal:
+
 .global _psort
 _psort:
 
@@ -1489,8 +1504,14 @@ _psort_r:
 .global _pthread_getugid_np
 _pthread_getugid_np:
 
+.global _pthread_kill
+_pthread_kill:
+
 .global _pthread_setugid_np
 _pthread_setugid_np:
+
+.global _pthread_sigmask
+_pthread_sigmask:
 
 .global _ptsname
 _ptsname:
@@ -1533,6 +1554,9 @@ _qsort_r:
 
 .global _radixsort
 _radixsort:
+
+.global _raise
+_raise:
 
 .global _rand
 _rand:
@@ -1810,6 +1834,39 @@ _shm_open:
 .global _shm_unlink
 _shm_unlink:
 
+.global _sigaction
+_sigaction:
+
+.global _sigaddset
+_sigaddset:
+
+.global _sigaltstack
+_sigaltstack:
+
+.global _sigblock
+_sigblock:
+
+.global _sigdelset
+_sigdelset:
+
+.global _sigemptyset
+_sigemptyset:
+
+.global _sigfillset
+_sigfillset:
+
+.global _sighold
+_sighold:
+
+.global _sigignore
+_sigignore:
+
+.global _siginterrupt
+_siginterrupt:
+
+.global _sigismember
+_sigismember:
+
 .global _signal
 _signal:
 
@@ -1818,6 +1875,33 @@ _signgam:
 
 .global _significand
 _significand:
+
+.global _sigpause
+_sigpause:
+
+.global _sigpending
+_sigpending:
+
+.global _sigprocmask
+_sigprocmask:
+
+.global _sigrelse
+_sigrelse:
+
+.global _sigset
+_sigset:
+
+.global _sigsetmask
+_sigsetmask:
+
+.global _sigsuspend
+_sigsuspend:
+
+.global _sigvec
+_sigvec:
+
+.global _sigwait
+_sigwait:
 
 .global _sin
 _sin:
@@ -2055,6 +2139,12 @@ _sys_errlist:
 
 .global _sys_nerr
 _sys_nerr:
+
+.global _sys_siglist
+_sys_siglist:
+
+.global _sys_signame
+_sys_signame:
 
 .global _syscall
 _syscall:
