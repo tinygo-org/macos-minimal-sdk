@@ -34,51 +34,59 @@ wget -P download --no-clobber --no-verbose \
 rm -rf $include
 mkdir -p $include/sys
 mkdir -p $sysroot/usr/local/libexec
-tar -C $sysroot/usr/local/libexec --strip-components=1 -xf "download/$AvailabilityVersions.tar.gz" "AvailabilityVersions-$AvailabilityVersions/availability.pl"
-tar -C $include           --strip-components=1 -xf "download/$CarbonHeaders.tar.gz" "CarbonHeaders-$CarbonHeaders/TargetConditionals.h"
-tar -C $include           --strip-components=2 -xf "download/$Libc.tar.gz"          "Libc-$Libc/include"
-tar -C $include           --strip-components=3 -xf "download/$Libm.tar.gz"          "Libm-$Libm/Source/Intel/math.h"
-tar -C $include           --strip-components=2 -xf "download/$libmalloc.tar.gz"     "libmalloc-$libmalloc/include/malloc"
-tar -C $include/sys       --strip-components=3 -xf "download/$libpthread.tar.gz"    "libpthread-$libpthread/include/sys/_pthread"
-tar -C $include           --strip-components=3 -xf "download/$xnu.tar.gz"           "xnu-$xnu/libsyscall/wrappers/gethostuuid.h"
-tar -C $include           --strip-components=2 -xf "download/$xnu.tar.gz"           "xnu-$xnu/bsd/arm/endian.h" \
-                                                                                    "xnu-$xnu/bsd/arm/_mcontext.h" \
-                                                                                    "xnu-$xnu/bsd/arm/types.h" \
-                                                                                    "xnu-$xnu/bsd/i386/endian.h" \
-                                                                                    "xnu-$xnu/bsd/i386/_mcontext.h" \
-                                                                                    "xnu-$xnu/bsd/i386/types.h" \
-                                                                                    "xnu-$xnu/bsd/machine/endian.h" \
-                                                                                    "xnu-$xnu/bsd/machine/_mcontext.h" \
-                                                                                    "xnu-$xnu/bsd/machine/types.h" \
-                                                                                    "xnu-$xnu/bsd/sys/appleapiopts.h" \
-                                                                                    "xnu-$xnu/bsd/sys/cdefs.h" \
-                                                                                    "xnu-$xnu/bsd/sys/dirent.h" \
-                                                                                    "xnu-$xnu/bsd/sys/_endian.h" \
-                                                                                    "xnu-$xnu/bsd/sys/errno.h" \
-                                                                                    "xnu-$xnu/bsd/sys/fcntl.h" \
-                                                                                    "xnu-$xnu/bsd/sys/make_symbol_aliasing.sh" \
-                                                                                    "xnu-$xnu/bsd/sys/make_posix_availability.sh" \
-                                                                                    "xnu-$xnu/bsd/sys/mman.h" \
-                                                                                    "xnu-$xnu/bsd/sys/resource.h" \
-                                                                                    "xnu-$xnu/bsd/sys/signal.h" \
-                                                                                    "xnu-$xnu/bsd/sys/select.h" \
-                                                                                    "xnu-$xnu/bsd/sys/_select.h" \
-                                                                                    "xnu-$xnu/bsd/sys/stat.h" \
-                                                                                    "xnu-$xnu/bsd/sys/stdio.h" \
-                                                                                    "xnu-$xnu/bsd/sys/_types" \
-                                                                                    "xnu-$xnu/bsd/sys/types.h" \
-                                                                                    "xnu-$xnu/bsd/sys/_types.h" \
-                                                                                    "xnu-$xnu/bsd/sys/unistd.h" \
-                                                                                    "xnu-$xnu/bsd/sys/wait.h" \
-                                                                                    "xnu-$xnu/EXTERNAL_HEADERS/Availability.h" \
-                                                                                    "xnu-$xnu/EXTERNAL_HEADERS/AvailabilityInternal.h" \
-                                                                                    "xnu-$xnu/libkern/libkern/_OSByteOrder.h" \
-                                                                                    "xnu-$xnu/libkern/libkern/arm/OSByteOrder.h" \
-                                                                                    "xnu-$xnu/libkern/libkern/i386/_OSByteOrder.h" \
-                                                                                    "xnu-$xnu/osfmk/arm/arch.h" \
-                                                                                    "xnu-$xnu/osfmk/mach/arm/_structs.h" \
-                                                                                    "xnu-$xnu/osfmk/mach/i386/_structs.h" \
-                                                                                    "xnu-$xnu/osfmk/mach/machine/_structs.h"
+tar -C $sysroot/usr/local/libexec --strip-components=1 -xf "download/$AvailabilityVersions.tar.gz" \
+        "AvailabilityVersions-$AvailabilityVersions/availability.pl"
+tar -C $include           --strip-components=1 -xf "download/$CarbonHeaders.tar.gz" \
+        "CarbonHeaders-$CarbonHeaders/TargetConditionals.h"
+tar -C $include           --strip-components=2 -xf "download/$Libc.tar.gz" \
+        "Libc-$Libc/include"
+tar -C $include           --strip-components=3 -xf "download/$Libm.tar.gz" \
+        "Libm-$Libm/Source/Intel/math.h"
+tar -C $include           --strip-components=2 -xf "download/$libmalloc.tar.gz" \
+        "libmalloc-$libmalloc/include/malloc"
+tar -C $include/sys       --strip-components=3 -xf "download/$libpthread.tar.gz" \
+        "libpthread-$libpthread/include/sys/_pthread"
+tar -C $include           --strip-components=3 -xf "download/$xnu.tar.gz" \
+        "xnu-$xnu/libsyscall/wrappers/gethostuuid.h"
+tar -C $include           --strip-components=2 -xf "download/$xnu.tar.gz" \
+        "xnu-$xnu/bsd/arm/endian.h" \
+        "xnu-$xnu/bsd/arm/_mcontext.h" \
+        "xnu-$xnu/bsd/arm/types.h" \
+        "xnu-$xnu/bsd/i386/endian.h" \
+        "xnu-$xnu/bsd/i386/_mcontext.h" \
+        "xnu-$xnu/bsd/i386/types.h" \
+        "xnu-$xnu/bsd/machine/endian.h" \
+        "xnu-$xnu/bsd/machine/_mcontext.h" \
+        "xnu-$xnu/bsd/machine/types.h" \
+        "xnu-$xnu/bsd/sys/appleapiopts.h" \
+        "xnu-$xnu/bsd/sys/cdefs.h" \
+        "xnu-$xnu/bsd/sys/dirent.h" \
+        "xnu-$xnu/bsd/sys/_endian.h" \
+        "xnu-$xnu/bsd/sys/errno.h" \
+        "xnu-$xnu/bsd/sys/fcntl.h" \
+        "xnu-$xnu/bsd/sys/make_symbol_aliasing.sh" \
+        "xnu-$xnu/bsd/sys/make_posix_availability.sh" \
+        "xnu-$xnu/bsd/sys/mman.h" \
+        "xnu-$xnu/bsd/sys/resource.h" \
+        "xnu-$xnu/bsd/sys/signal.h" \
+        "xnu-$xnu/bsd/sys/select.h" \
+        "xnu-$xnu/bsd/sys/_select.h" \
+        "xnu-$xnu/bsd/sys/stat.h" \
+        "xnu-$xnu/bsd/sys/stdio.h" \
+        "xnu-$xnu/bsd/sys/_types" \
+        "xnu-$xnu/bsd/sys/types.h" \
+        "xnu-$xnu/bsd/sys/_types.h" \
+        "xnu-$xnu/bsd/sys/unistd.h" \
+        "xnu-$xnu/bsd/sys/wait.h" \
+        "xnu-$xnu/EXTERNAL_HEADERS/Availability.h" \
+        "xnu-$xnu/EXTERNAL_HEADERS/AvailabilityInternal.h" \
+        "xnu-$xnu/libkern/libkern/_OSByteOrder.h" \
+        "xnu-$xnu/libkern/libkern/arm/OSByteOrder.h" \
+        "xnu-$xnu/libkern/libkern/i386/_OSByteOrder.h" \
+        "xnu-$xnu/osfmk/arm/arch.h" \
+        "xnu-$xnu/osfmk/mach/arm/_structs.h" \
+        "xnu-$xnu/osfmk/mach/i386/_structs.h" \
+        "xnu-$xnu/osfmk/mach/machine/_structs.h"
 
 # Generate some files.
 $include/sys/make_symbol_aliasing.sh $sysroot $include/sys/_symbol_aliasing.h
