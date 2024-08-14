@@ -5,10 +5,11 @@
 # place. Therefore, this file should be kept compatible with both syntaxes.
 
 # These are the values for macOS 11.5:
-# https://opensource.apple.com/release/macos-115.html
+# https://opensource.apple.com/releases/
 AvailabilityVersions_version=80.3
 Libc_version=1439.141.1
 libmalloc_version=317.140.5
+libplatform_version=254.80.2
 libpthread_version=454.120.2
 xnu_version=7195.141.2
 

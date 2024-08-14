@@ -13,6 +13,7 @@ Libc="Libc-$Libc_version"
 xnu="xnu-$xnu_version"
 AvailabilityVersions="AvailabilityVersions-$AvailabilityVersions_version"
 libmalloc="libmalloc-$libmalloc_version"
+libplatform="libplatform-$libplatform_version"
 libpthread="libpthread-$libpthread_version"
 CarbonHeaders="CarbonHeaders-$CarbonHeaders_version"
 Libm="Libm-$Libm_version"
@@ -25,8 +26,9 @@ wget -P download --no-clobber --no-verbose \
 	"https://opensource.apple.com/tarballs/CarbonHeaders/$CarbonHeaders.tar.gz" \
 	"https://opensource.apple.com/tarballs/Libc/$Libc.tar.gz" \
 	"https://opensource.apple.com/tarballs/Libm/$Libm.tar.gz" \
-	"https://opensource.apple.com/tarballs/libpthread/$libpthread.tar.gz" \
 	"https://opensource.apple.com/tarballs/libmalloc/$libmalloc.tar.gz" \
+	"https://opensource.apple.com/tarballs/libplatform/$libplatform.tar.gz" \
+	"https://opensource.apple.com/tarballs/libpthread/$libpthread.tar.gz" \
 	"https://opensource.apple.com/tarballs/xnu/$xnu.tar.gz"
 
 # Extract source files.
@@ -44,6 +46,8 @@ tar -C $include           --strip-components=3 -xf "download/$Libm.tar.gz" \
         "Libm-$Libm/Source/Intel/math.h"
 tar -C $include           --strip-components=2 -xf "download/$libmalloc.tar.gz" \
         "libmalloc-$libmalloc/include/malloc"
+tar -C $include           --strip-components=2 -xf "download/$libplatform.tar.gz" \
+        "libplatform-$libplatform/include/ucontext.h"
 tar -C $include/sys       --strip-components=3 -xf "download/$libpthread.tar.gz" \
         "libpthread-$libpthread/include/sys/_pthread"
 tar -C $include           --strip-components=3 -xf "download/$xnu.tar.gz" \
@@ -76,6 +80,7 @@ tar -C $include           --strip-components=2 -xf "download/$xnu.tar.gz" \
         "xnu-$xnu/bsd/sys/_types" \
         "xnu-$xnu/bsd/sys/types.h" \
         "xnu-$xnu/bsd/sys/_types.h" \
+        "xnu-$xnu/bsd/sys/ucontext.h" \
         "xnu-$xnu/bsd/sys/unistd.h" \
         "xnu-$xnu/bsd/sys/wait.h" \
         "xnu-$xnu/EXTERNAL_HEADERS/Availability.h" \
