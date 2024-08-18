@@ -133,6 +133,9 @@ _acosl:
 .global _add_profil
 _add_profil:
 
+.global _adjtime
+_adjtime:
+
 .global _alarm
 _alarm:
 
@@ -231,6 +234,27 @@ _atol:
 
 .global _atoll
 _atoll:
+
+.global _audit
+_audit:
+
+.global _audit_session_join
+_audit_session_join:
+
+.global _audit_session_port
+_audit_session_port:
+
+.global _audit_session_self
+_audit_session_self:
+
+.global _auditctl
+_auditctl:
+
+.global _auditon
+_auditon:
+
+.global _averunnable
+_averunnable:
 
 .global _bcmp
 _bcmp:
@@ -805,6 +829,9 @@ _funopen:
 .global _futimens
 _futimens:
 
+.global _futimes
+_futimes:
+
 .global _fwrite
 _fwrite:
 
@@ -822,6 +849,15 @@ _getattrlistat:
 
 .global _getattrlistbulk
 _getattrlistbulk:
+
+.global _getaudit
+_getaudit:
+
+.global _getaudit_addr
+_getaudit_addr:
+
+.global _getauid
+_getauid:
 
 .global _getbsize
 _getbsize:
@@ -892,6 +928,9 @@ _gethostuuid:
 .global _getiopolicy_np
 _getiopolicy_np:
 
+.global _getitimer
+_getitimer:
+
 .global _getline
 _getline:
 
@@ -954,6 +993,9 @@ _getsid:
 
 .global _getsubopt
 _getsubopt:
+
+.global _gettimeofday
+_gettimeofday:
 
 .global _getuid
 _getuid:
@@ -1036,11 +1078,20 @@ _jn:
 .global _jrand48
 _jrand48:
 
+.global _kevent
+_kevent:
+
+.global _kevent64
+_kevent64:
+
 .global _kill
 _kill:
 
 .global _killpg
 _killpg:
+
+.global _kqueue
+_kqueue:
 
 .global _l64a
 _l64a:
@@ -1200,6 +1251,9 @@ _lstatx64_np:
 
 .global _lstatx_np$INODE64
 _lstatx_np$INODE64:
+
+.global _lutimes
+_lutimes:
 
 .global _madvise
 _madvise:
@@ -1735,6 +1789,15 @@ _setattrlist:
 .global _setattrlistat
 _setattrlistat:
 
+.global _setaudit
+_setaudit:
+
+.global _setaudit_addr
+_setaudit_addr:
+
+.global _setauid
+_setauid:
+
 .global _setbuf
 _setbuf:
 
@@ -1767,6 +1830,9 @@ _sethostname:
 
 .global _setiopolicy_np
 _setiopolicy_np:
+
+.global _setitimer
+_setitimer:
 
 .global _setkey
 _setkey:
@@ -1815,6 +1881,9 @@ _setsid:
 
 .global _setstate
 _setstate:
+
+.global _settimeofday
+_settimeofday:
 
 .global _setuid
 _setuid:
@@ -2152,6 +2221,15 @@ _syscall:
 .global _sysconf
 _sysconf:
 
+.global _sysctl
+_sysctl:
+
+.global _sysctlbyname
+_sysctlbyname:
+
+.global _sysctlnametomib
+_sysctlnametomib:
+
 .global _system
 _system:
 
@@ -2286,6 +2364,9 @@ _usleep:
 
 .global _utimensat
 _utimensat:
+
+.global _utimes
+_utimes:
 
 .global _valloc
 _valloc:

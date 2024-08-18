@@ -54,34 +54,55 @@ tar -C $include           --strip-components=3 -xf "download/$xnu.tar.gz" \
         "xnu-$xnu/libsyscall/wrappers/gethostuuid.h"
 tar -C $include           --strip-components=2 -xf "download/$xnu.tar.gz" \
         "xnu-$xnu/bsd/arm/endian.h" \
+        "xnu-$xnu/bsd/arm/limits.h" \
+        "xnu-$xnu/bsd/arm/_limits.h" \
         "xnu-$xnu/bsd/arm/_mcontext.h" \
+        "xnu-$xnu/bsd/arm/param.h" \
+        "xnu-$xnu/bsd/arm/_param.h" \
         "xnu-$xnu/bsd/arm/types.h" \
+        "xnu-$xnu/bsd/bsm/audit.h" \
         "xnu-$xnu/bsd/i386/endian.h" \
+        "xnu-$xnu/bsd/i386/limits.h" \
+        "xnu-$xnu/bsd/i386/_limits.h" \
         "xnu-$xnu/bsd/i386/_mcontext.h" \
+        "xnu-$xnu/bsd/i386/param.h" \
+        "xnu-$xnu/bsd/i386/_param.h" \
         "xnu-$xnu/bsd/i386/types.h" \
         "xnu-$xnu/bsd/machine/endian.h" \
+        "xnu-$xnu/bsd/machine/limits.h" \
         "xnu-$xnu/bsd/machine/_mcontext.h" \
+        "xnu-$xnu/bsd/machine/param.h" \
         "xnu-$xnu/bsd/machine/types.h" \
         "xnu-$xnu/bsd/sys/appleapiopts.h" \
         "xnu-$xnu/bsd/sys/cdefs.h" \
         "xnu-$xnu/bsd/sys/dirent.h" \
         "xnu-$xnu/bsd/sys/_endian.h" \
         "xnu-$xnu/bsd/sys/errno.h" \
+        "xnu-$xnu/bsd/sys/event.h" \
         "xnu-$xnu/bsd/sys/fcntl.h" \
+        "xnu-$xnu/bsd/sys/lock.h" \
         "xnu-$xnu/bsd/sys/make_symbol_aliasing.sh" \
         "xnu-$xnu/bsd/sys/make_posix_availability.sh" \
         "xnu-$xnu/bsd/sys/mman.h" \
+        "xnu-$xnu/bsd/sys/param.h" \
+        "xnu-$xnu/bsd/sys/proc.h" \
+        "xnu-$xnu/bsd/sys/queue.h" \
         "xnu-$xnu/bsd/sys/resource.h" \
         "xnu-$xnu/bsd/sys/signal.h" \
         "xnu-$xnu/bsd/sys/select.h" \
         "xnu-$xnu/bsd/sys/_select.h" \
         "xnu-$xnu/bsd/sys/stat.h" \
         "xnu-$xnu/bsd/sys/stdio.h" \
+        "xnu-$xnu/bsd/sys/sysctl.h" \
+        "xnu-$xnu/bsd/sys/syslimits.h" \
+        "xnu-$xnu/bsd/sys/time.h" \
         "xnu-$xnu/bsd/sys/_types" \
         "xnu-$xnu/bsd/sys/types.h" \
         "xnu-$xnu/bsd/sys/_types.h" \
         "xnu-$xnu/bsd/sys/ucontext.h" \
+        "xnu-$xnu/bsd/sys/ucred.h" \
         "xnu-$xnu/bsd/sys/unistd.h" \
+        "xnu-$xnu/bsd/sys/vm.h" \
         "xnu-$xnu/bsd/sys/wait.h" \
         "xnu-$xnu/EXTERNAL_HEADERS/Availability.h" \
         "xnu-$xnu/EXTERNAL_HEADERS/AvailabilityInternal.h" \
@@ -89,9 +110,17 @@ tar -C $include           --strip-components=2 -xf "download/$xnu.tar.gz" \
         "xnu-$xnu/libkern/libkern/arm/OSByteOrder.h" \
         "xnu-$xnu/libkern/libkern/i386/_OSByteOrder.h" \
         "xnu-$xnu/osfmk/arm/arch.h" \
+        "xnu-$xnu/osfmk/mach/arm/boolean.h" \
         "xnu-$xnu/osfmk/mach/arm/_structs.h" \
+        "xnu-$xnu/osfmk/mach/arm/vm_types.h" \
+        "xnu-$xnu/osfmk/mach/i386/boolean.h" \
         "xnu-$xnu/osfmk/mach/i386/_structs.h" \
-        "xnu-$xnu/osfmk/mach/machine/_structs.h"
+        "xnu-$xnu/osfmk/mach/i386/vm_types.h" \
+        "xnu-$xnu/osfmk/mach/machine/boolean.h" \
+        "xnu-$xnu/osfmk/mach/machine/_structs.h" \
+        "xnu-$xnu/osfmk/mach/machine/vm_types.h" \
+        "xnu-$xnu/osfmk/mach/boolean.h" \
+        "xnu-$xnu/osfmk/mach/port.h"
 
 # Generate some files.
 $include/sys/make_symbol_aliasing.sh $sysroot $include/sys/_symbol_aliasing.h
@@ -114,9 +143,11 @@ rm $include/kvm.h
 # open source license.
 cp -p src/stdint.h $include/stdint.h
 
-# Replace OSByteOrder.h with an empty file because it doesn't have an open
-# source license. So far, this seems to work well enough.
-echo -n > $include/libkern/arm/OSByteOrder.h
+# Replace these files with an empty file because they don't have an open source
+# license. So far, this seems to work well enough.
+printf "" > $include/libkern/arm/OSByteOrder.h
+printf "" > $include/arm/_limits.h
+printf "" > $include/arm/_param.h
 
 # Replace src/signal.h. This avoids including arm/signal.h, which doesn't have
 # an open source license.
