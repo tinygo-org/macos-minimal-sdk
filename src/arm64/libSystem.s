@@ -85,6 +85,15 @@ ___svfscanf:
 .global ___swbuf
 ___swbuf:
 
+.global ___ulock_wait
+___ulock_wait:
+
+.global ___ulock_wait2
+___ulock_wait2:
+
+.global ___ulock_wake
+___ulock_wake:
+
 .global ___vsnprintf_chk
 ___vsnprintf_chk:
 
