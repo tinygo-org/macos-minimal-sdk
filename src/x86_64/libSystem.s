@@ -1,6 +1,12 @@
 // GENERATED FILE - DO NOT EDIT
 // This file was generated using generate-stubs.py with --target=x86_64-apple-macos10.12
 
+.global _KERNEL_AUDIT_TOKEN
+_KERNEL_AUDIT_TOKEN:
+
+.global _KERNEL_SECURITY_TOKEN
+_KERNEL_SECURITY_TOKEN:
+
 .global __Exit
 __Exit:
 
@@ -100,8 +106,62 @@ ___vsnprintf_chk:
 .global ___vsprintf_chk
 ___vsprintf_chk:
 
+.global __dispatch_data_destructor_free
+__dispatch_data_destructor_free:
+
+.global __dispatch_data_destructor_munmap
+__dispatch_data_destructor_munmap:
+
+.global __dispatch_data_empty
+__dispatch_data_empty:
+
+.global __dispatch_main_q
+__dispatch_main_q:
+
+.global __dispatch_queue_attr_concurrent
+__dispatch_queue_attr_concurrent:
+
+.global __dispatch_source_type_data_add
+__dispatch_source_type_data_add:
+
+.global __dispatch_source_type_data_or
+__dispatch_source_type_data_or:
+
+.global __dispatch_source_type_data_replace
+__dispatch_source_type_data_replace:
+
+.global __dispatch_source_type_mach_recv
+__dispatch_source_type_mach_recv:
+
+.global __dispatch_source_type_mach_send
+__dispatch_source_type_mach_send:
+
+.global __dispatch_source_type_memorypressure
+__dispatch_source_type_memorypressure:
+
+.global __dispatch_source_type_proc
+__dispatch_source_type_proc:
+
+.global __dispatch_source_type_read
+__dispatch_source_type_read:
+
+.global __dispatch_source_type_signal
+__dispatch_source_type_signal:
+
+.global __dispatch_source_type_timer
+__dispatch_source_type_timer:
+
+.global __dispatch_source_type_vnode
+__dispatch_source_type_vnode:
+
+.global __dispatch_source_type_write
+__dispatch_source_type_write:
+
 .global __exit
 __exit:
+
+.global __tlv_bootstrap
+__tlv_bootstrap:
 
 .global _a64l
 _a64l:
@@ -444,6 +504,330 @@ _difftime:
 
 .global _dirfd
 _dirfd:
+
+.global _dispatch_activate
+_dispatch_activate:
+
+.global _dispatch_after
+_dispatch_after:
+
+.global _dispatch_after_f
+_dispatch_after_f:
+
+.global _dispatch_apply
+_dispatch_apply:
+
+.global _dispatch_apply_f
+_dispatch_apply_f:
+
+.global _dispatch_assert_queue$V2
+_dispatch_assert_queue$V2:
+
+.global _dispatch_assert_queue_barrier
+_dispatch_assert_queue_barrier:
+
+.global _dispatch_assert_queue_not$V2
+_dispatch_assert_queue_not$V2:
+
+.global _dispatch_async
+_dispatch_async:
+
+.global _dispatch_async_and_wait
+_dispatch_async_and_wait:
+
+.global _dispatch_async_and_wait_f
+_dispatch_async_and_wait_f:
+
+.global _dispatch_async_f
+_dispatch_async_f:
+
+.global _dispatch_barrier_async
+_dispatch_barrier_async:
+
+.global _dispatch_barrier_async_and_wait
+_dispatch_barrier_async_and_wait:
+
+.global _dispatch_barrier_async_and_wait_f
+_dispatch_barrier_async_and_wait_f:
+
+.global _dispatch_barrier_async_f
+_dispatch_barrier_async_f:
+
+.global _dispatch_barrier_sync
+_dispatch_barrier_sync:
+
+.global _dispatch_barrier_sync_f
+_dispatch_barrier_sync_f:
+
+.global _dispatch_block_cancel
+_dispatch_block_cancel:
+
+.global _dispatch_block_create
+_dispatch_block_create:
+
+.global _dispatch_block_create_with_qos_class
+_dispatch_block_create_with_qos_class:
+
+.global _dispatch_block_notify
+_dispatch_block_notify:
+
+.global _dispatch_block_perform
+_dispatch_block_perform:
+
+.global _dispatch_block_testcancel
+_dispatch_block_testcancel:
+
+.global _dispatch_block_wait
+_dispatch_block_wait:
+
+.global _dispatch_cancel
+_dispatch_cancel:
+
+.global _dispatch_data_apply
+_dispatch_data_apply:
+
+.global _dispatch_data_copy_region
+_dispatch_data_copy_region:
+
+.global _dispatch_data_create
+_dispatch_data_create:
+
+.global _dispatch_data_create_concat
+_dispatch_data_create_concat:
+
+.global _dispatch_data_create_map
+_dispatch_data_create_map:
+
+.global _dispatch_data_create_subrange
+_dispatch_data_create_subrange:
+
+.global _dispatch_data_get_size
+_dispatch_data_get_size:
+
+.global _dispatch_debug
+_dispatch_debug:
+
+.global _dispatch_debugv
+_dispatch_debugv:
+
+.global _dispatch_get_context
+_dispatch_get_context:
+
+.global _dispatch_get_current_queue
+_dispatch_get_current_queue:
+
+.global _dispatch_get_global_queue
+_dispatch_get_global_queue:
+
+.global _dispatch_get_specific
+_dispatch_get_specific:
+
+.global _dispatch_group_async
+_dispatch_group_async:
+
+.global _dispatch_group_async_f
+_dispatch_group_async_f:
+
+.global _dispatch_group_create
+_dispatch_group_create:
+
+.global _dispatch_group_enter
+_dispatch_group_enter:
+
+.global _dispatch_group_leave
+_dispatch_group_leave:
+
+.global _dispatch_group_notify
+_dispatch_group_notify:
+
+.global _dispatch_group_notify_f
+_dispatch_group_notify_f:
+
+.global _dispatch_group_wait
+_dispatch_group_wait:
+
+.global _dispatch_io_barrier
+_dispatch_io_barrier:
+
+.global _dispatch_io_close
+_dispatch_io_close:
+
+.global _dispatch_io_create
+_dispatch_io_create:
+
+.global _dispatch_io_create_with_io
+_dispatch_io_create_with_io:
+
+.global _dispatch_io_create_with_path
+_dispatch_io_create_with_path:
+
+.global _dispatch_io_get_descriptor
+_dispatch_io_get_descriptor:
+
+.global _dispatch_io_read
+_dispatch_io_read:
+
+.global _dispatch_io_set_high_water
+_dispatch_io_set_high_water:
+
+.global _dispatch_io_set_interval
+_dispatch_io_set_interval:
+
+.global _dispatch_io_set_low_water
+_dispatch_io_set_low_water:
+
+.global _dispatch_io_write
+_dispatch_io_write:
+
+.global _dispatch_main
+_dispatch_main:
+
+.global _dispatch_notify
+_dispatch_notify:
+
+.global _dispatch_once
+_dispatch_once:
+
+.global _dispatch_once_f
+_dispatch_once_f:
+
+.global _dispatch_queue_attr_make_initially_inactive
+_dispatch_queue_attr_make_initially_inactive:
+
+.global _dispatch_queue_attr_make_with_autorelease_frequency
+_dispatch_queue_attr_make_with_autorelease_frequency:
+
+.global _dispatch_queue_attr_make_with_qos_class
+_dispatch_queue_attr_make_with_qos_class:
+
+.global _dispatch_queue_create
+_dispatch_queue_create:
+
+.global _dispatch_queue_create_with_target$V2
+_dispatch_queue_create_with_target$V2:
+
+.global _dispatch_queue_get_label
+_dispatch_queue_get_label:
+
+.global _dispatch_queue_get_qos_class
+_dispatch_queue_get_qos_class:
+
+.global _dispatch_queue_get_specific
+_dispatch_queue_get_specific:
+
+.global _dispatch_queue_set_specific
+_dispatch_queue_set_specific:
+
+.global _dispatch_read
+_dispatch_read:
+
+.global _dispatch_release
+_dispatch_release:
+
+.global _dispatch_resume
+_dispatch_resume:
+
+.global _dispatch_retain
+_dispatch_retain:
+
+.global _dispatch_semaphore_create
+_dispatch_semaphore_create:
+
+.global _dispatch_semaphore_signal
+_dispatch_semaphore_signal:
+
+.global _dispatch_semaphore_wait
+_dispatch_semaphore_wait:
+
+.global _dispatch_set_context
+_dispatch_set_context:
+
+.global _dispatch_set_finalizer_f
+_dispatch_set_finalizer_f:
+
+.global _dispatch_set_qos_class_floor
+_dispatch_set_qos_class_floor:
+
+.global _dispatch_set_target_queue
+_dispatch_set_target_queue:
+
+.global _dispatch_source_cancel
+_dispatch_source_cancel:
+
+.global _dispatch_source_create
+_dispatch_source_create:
+
+.global _dispatch_source_get_data
+_dispatch_source_get_data:
+
+.global _dispatch_source_get_handle
+_dispatch_source_get_handle:
+
+.global _dispatch_source_get_mask
+_dispatch_source_get_mask:
+
+.global _dispatch_source_merge_data
+_dispatch_source_merge_data:
+
+.global _dispatch_source_set_cancel_handler
+_dispatch_source_set_cancel_handler:
+
+.global _dispatch_source_set_cancel_handler_f
+_dispatch_source_set_cancel_handler_f:
+
+.global _dispatch_source_set_event_handler
+_dispatch_source_set_event_handler:
+
+.global _dispatch_source_set_event_handler_f
+_dispatch_source_set_event_handler_f:
+
+.global _dispatch_source_set_registration_handler
+_dispatch_source_set_registration_handler:
+
+.global _dispatch_source_set_registration_handler_f
+_dispatch_source_set_registration_handler_f:
+
+.global _dispatch_source_set_timer
+_dispatch_source_set_timer:
+
+.global _dispatch_source_testcancel
+_dispatch_source_testcancel:
+
+.global _dispatch_suspend
+_dispatch_suspend:
+
+.global _dispatch_sync
+_dispatch_sync:
+
+.global _dispatch_sync_f
+_dispatch_sync_f:
+
+.global _dispatch_testcancel
+_dispatch_testcancel:
+
+.global _dispatch_time
+_dispatch_time:
+
+.global _dispatch_wait
+_dispatch_wait:
+
+.global _dispatch_walltime
+_dispatch_walltime:
+
+.global _dispatch_workloop_create
+_dispatch_workloop_create:
+
+.global _dispatch_workloop_create_inactive
+_dispatch_workloop_create_inactive:
+
+.global _dispatch_workloop_set_autorelease_frequency
+_dispatch_workloop_set_autorelease_frequency:
+
+.global _dispatch_workloop_set_os_workgroup
+_dispatch_workloop_set_os_workgroup:
+
+.global _dispatch_write
+_dispatch_write:
 
 .global _div
 _div:
@@ -1264,6 +1648,15 @@ _lstatx_np$INODE64:
 .global _lutimes
 _lutimes:
 
+.global _mach_msg
+_mach_msg:
+
+.global _mach_msg_overwrite
+_mach_msg_overwrite:
+
+.global _mach_voucher_deallocate
+_mach_voucher_deallocate:
+
 .global _madvise
 _madvise:
 
@@ -1501,6 +1894,54 @@ _optopt:
 .global _optreset
 _optreset:
 
+.global _os_release
+_os_release:
+
+.global _os_retain
+_os_retain:
+
+.global _os_workgroup_cancel
+_os_workgroup_cancel:
+
+.global _os_workgroup_copy_port
+_os_workgroup_copy_port:
+
+.global _os_workgroup_create_with_port
+_os_workgroup_create_with_port:
+
+.global _os_workgroup_create_with_workgroup
+_os_workgroup_create_with_workgroup:
+
+.global _os_workgroup_get_working_arena
+_os_workgroup_get_working_arena:
+
+.global _os_workgroup_interval_finish
+_os_workgroup_interval_finish:
+
+.global _os_workgroup_interval_start
+_os_workgroup_interval_start:
+
+.global _os_workgroup_interval_update
+_os_workgroup_interval_update:
+
+.global _os_workgroup_join
+_os_workgroup_join:
+
+.global _os_workgroup_leave
+_os_workgroup_leave:
+
+.global _os_workgroup_max_parallel_threads
+_os_workgroup_max_parallel_threads:
+
+.global _os_workgroup_parallel_create
+_os_workgroup_parallel_create:
+
+.global _os_workgroup_set_working_arena
+_os_workgroup_set_working_arena:
+
+.global _os_workgroup_testcancel
+_os_workgroup_testcancel:
+
 .global _pathconf
 _pathconf:
 
@@ -1564,17 +2005,323 @@ _psort_b:
 .global _psort_r
 _psort_r:
 
+.global _pthread_atfork
+_pthread_atfork:
+
+.global _pthread_attr_destroy
+_pthread_attr_destroy:
+
+.global _pthread_attr_get_qos_class_np
+_pthread_attr_get_qos_class_np:
+
+.global _pthread_attr_getdetachstate
+_pthread_attr_getdetachstate:
+
+.global _pthread_attr_getguardsize
+_pthread_attr_getguardsize:
+
+.global _pthread_attr_getinheritsched
+_pthread_attr_getinheritsched:
+
+.global _pthread_attr_getschedparam
+_pthread_attr_getschedparam:
+
+.global _pthread_attr_getschedpolicy
+_pthread_attr_getschedpolicy:
+
+.global _pthread_attr_getscope
+_pthread_attr_getscope:
+
+.global _pthread_attr_getstack
+_pthread_attr_getstack:
+
+.global _pthread_attr_getstackaddr
+_pthread_attr_getstackaddr:
+
+.global _pthread_attr_getstacksize
+_pthread_attr_getstacksize:
+
+.global _pthread_attr_init
+_pthread_attr_init:
+
+.global _pthread_attr_set_qos_class_np
+_pthread_attr_set_qos_class_np:
+
+.global _pthread_attr_setdetachstate
+_pthread_attr_setdetachstate:
+
+.global _pthread_attr_setguardsize
+_pthread_attr_setguardsize:
+
+.global _pthread_attr_setinheritsched
+_pthread_attr_setinheritsched:
+
+.global _pthread_attr_setschedparam
+_pthread_attr_setschedparam:
+
+.global _pthread_attr_setschedpolicy
+_pthread_attr_setschedpolicy:
+
+.global _pthread_attr_setscope
+_pthread_attr_setscope:
+
+.global _pthread_attr_setstack
+_pthread_attr_setstack:
+
+.global _pthread_attr_setstackaddr
+_pthread_attr_setstackaddr:
+
+.global _pthread_attr_setstacksize
+_pthread_attr_setstacksize:
+
+.global _pthread_cancel
+_pthread_cancel:
+
+.global _pthread_cond_broadcast
+_pthread_cond_broadcast:
+
+.global _pthread_cond_destroy
+_pthread_cond_destroy:
+
+.global _pthread_cond_init
+_pthread_cond_init:
+
+.global _pthread_cond_signal
+_pthread_cond_signal:
+
+.global _pthread_cond_signal_thread_np
+_pthread_cond_signal_thread_np:
+
+.global _pthread_cond_timedwait
+_pthread_cond_timedwait:
+
+.global _pthread_cond_timedwait_relative_np
+_pthread_cond_timedwait_relative_np:
+
+.global _pthread_cond_wait
+_pthread_cond_wait:
+
+.global _pthread_condattr_destroy
+_pthread_condattr_destroy:
+
+.global _pthread_condattr_getpshared
+_pthread_condattr_getpshared:
+
+.global _pthread_condattr_init
+_pthread_condattr_init:
+
+.global _pthread_condattr_setpshared
+_pthread_condattr_setpshared:
+
+.global _pthread_cpu_number_np
+_pthread_cpu_number_np:
+
+.global _pthread_create
+_pthread_create:
+
+.global _pthread_create_suspended_np
+_pthread_create_suspended_np:
+
+.global _pthread_detach
+_pthread_detach:
+
+.global _pthread_equal
+_pthread_equal:
+
+.global _pthread_exit
+_pthread_exit:
+
+.global _pthread_from_mach_thread_np
+_pthread_from_mach_thread_np:
+
+.global _pthread_get_qos_class_np
+_pthread_get_qos_class_np:
+
+.global _pthread_get_stackaddr_np
+_pthread_get_stackaddr_np:
+
+.global _pthread_get_stacksize_np
+_pthread_get_stacksize_np:
+
+.global _pthread_getconcurrency
+_pthread_getconcurrency:
+
+.global _pthread_getname_np
+_pthread_getname_np:
+
+.global _pthread_getschedparam
+_pthread_getschedparam:
+
+.global _pthread_getspecific
+_pthread_getspecific:
+
 .global _pthread_getugid_np
 _pthread_getugid_np:
 
+.global _pthread_is_threaded_np
+_pthread_is_threaded_np:
+
+.global _pthread_jit_write_protect_np
+_pthread_jit_write_protect_np:
+
+.global _pthread_jit_write_protect_supported_np
+_pthread_jit_write_protect_supported_np:
+
+.global _pthread_join
+_pthread_join:
+
+.global _pthread_key_create
+_pthread_key_create:
+
+.global _pthread_key_delete
+_pthread_key_delete:
+
 .global _pthread_kill
 _pthread_kill:
+
+.global _pthread_mach_thread_np
+_pthread_mach_thread_np:
+
+.global _pthread_main_np
+_pthread_main_np:
+
+.global _pthread_mutex_destroy
+_pthread_mutex_destroy:
+
+.global _pthread_mutex_getprioceiling
+_pthread_mutex_getprioceiling:
+
+.global _pthread_mutex_init
+_pthread_mutex_init:
+
+.global _pthread_mutex_lock
+_pthread_mutex_lock:
+
+.global _pthread_mutex_setprioceiling
+_pthread_mutex_setprioceiling:
+
+.global _pthread_mutex_trylock
+_pthread_mutex_trylock:
+
+.global _pthread_mutex_unlock
+_pthread_mutex_unlock:
+
+.global _pthread_mutexattr_destroy
+_pthread_mutexattr_destroy:
+
+.global _pthread_mutexattr_getpolicy_np
+_pthread_mutexattr_getpolicy_np:
+
+.global _pthread_mutexattr_getprioceiling
+_pthread_mutexattr_getprioceiling:
+
+.global _pthread_mutexattr_getprotocol
+_pthread_mutexattr_getprotocol:
+
+.global _pthread_mutexattr_getpshared
+_pthread_mutexattr_getpshared:
+
+.global _pthread_mutexattr_gettype
+_pthread_mutexattr_gettype:
+
+.global _pthread_mutexattr_init
+_pthread_mutexattr_init:
+
+.global _pthread_mutexattr_setpolicy_np
+_pthread_mutexattr_setpolicy_np:
+
+.global _pthread_mutexattr_setprioceiling
+_pthread_mutexattr_setprioceiling:
+
+.global _pthread_mutexattr_setprotocol
+_pthread_mutexattr_setprotocol:
+
+.global _pthread_mutexattr_setpshared
+_pthread_mutexattr_setpshared:
+
+.global _pthread_mutexattr_settype
+_pthread_mutexattr_settype:
+
+.global _pthread_once
+_pthread_once:
+
+.global _pthread_override_qos_class_end_np
+_pthread_override_qos_class_end_np:
+
+.global _pthread_override_qos_class_start_np
+_pthread_override_qos_class_start_np:
+
+.global _pthread_rwlock_destroy
+_pthread_rwlock_destroy:
+
+.global _pthread_rwlock_init
+_pthread_rwlock_init:
+
+.global _pthread_rwlock_rdlock
+_pthread_rwlock_rdlock:
+
+.global _pthread_rwlock_tryrdlock
+_pthread_rwlock_tryrdlock:
+
+.global _pthread_rwlock_trywrlock
+_pthread_rwlock_trywrlock:
+
+.global _pthread_rwlock_unlock
+_pthread_rwlock_unlock:
+
+.global _pthread_rwlock_wrlock
+_pthread_rwlock_wrlock:
+
+.global _pthread_rwlockattr_destroy
+_pthread_rwlockattr_destroy:
+
+.global _pthread_rwlockattr_getpshared
+_pthread_rwlockattr_getpshared:
+
+.global _pthread_rwlockattr_init
+_pthread_rwlockattr_init:
+
+.global _pthread_rwlockattr_setpshared
+_pthread_rwlockattr_setpshared:
+
+.global _pthread_self
+_pthread_self:
+
+.global _pthread_set_qos_class_self_np
+_pthread_set_qos_class_self_np:
+
+.global _pthread_setcancelstate
+_pthread_setcancelstate:
+
+.global _pthread_setcanceltype
+_pthread_setcanceltype:
+
+.global _pthread_setconcurrency
+_pthread_setconcurrency:
+
+.global _pthread_setname_np
+_pthread_setname_np:
+
+.global _pthread_setschedparam
+_pthread_setschedparam:
+
+.global _pthread_setspecific
+_pthread_setspecific:
 
 .global _pthread_setugid_np
 _pthread_setugid_np:
 
 .global _pthread_sigmask
 _pthread_sigmask:
+
+.global _pthread_testcancel
+_pthread_testcancel:
+
+.global _pthread_threadid_np
+_pthread_threadid_np:
+
+.global _pthread_yield_np
+_pthread_yield_np:
 
 .global _ptsname
 _ptsname:
@@ -1605,6 +2352,12 @@ _putw:
 
 .global _pwrite
 _pwrite:
+
+.global _qos_class_main
+_qos_class_main:
+
+.global _qos_class_self
+_qos_class_self:
 
 .global _qsort
 _qsort:
@@ -1779,6 +2532,15 @@ _scandir_b$INODE64:
 
 .global _scanf
 _scanf:
+
+.global _sched_get_priority_max
+_sched_get_priority_max:
+
+.global _sched_get_priority_min
+_sched_get_priority_min:
+
+.global _sched_yield
+_sched_yield:
 
 .global _searchfs
 _searchfs:

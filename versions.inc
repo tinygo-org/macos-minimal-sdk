@@ -8,6 +8,7 @@
 # https://opensource.apple.com/releases/
 AvailabilityVersions_version=80.3
 Libc_version=1439.141.1
+libdispatch_version=1271.120.2
 libmalloc_version=317.140.5
 libplatform_version=254.80.2
 libpthread_version=454.120.2

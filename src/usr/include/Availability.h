@@ -385,7 +385,7 @@
  *    __API_AVAILABLE(macos(10.9), ios(10.0))
  *    __API_AVAILABLE(macos(10.4), ios(8.0), watchos(2.0), tvos(10.0))
  */
-#define __API_AVAILABLE(...) __API_AVAILABLE_GET_MACRO(__VA_ARGS__,__API_AVAILABLE4, __API_AVAILABLE3, __API_AVAILABLE2, __API_AVAILABLE1)(__VA_ARGS__)
+#define __API_AVAILABLE(...)
 
 
 /*
@@ -415,6 +415,6 @@
  *    __API_UNAVAILABLE(macos)
  *    __API_UNAVAILABLE(watchos, tvos)
  */
-#define __API_UNAVAILABLE(...) __API_UNAVAILABLE_GET_MACRO(__VA_ARGS__,__API_UNAVAILABLE3,__API_UNAVAILABLE2,__API_UNAVAILABLE1)(__VA_ARGS__)
+#define __API_UNAVAILABLE(...)
 
 #endif /* __AVAILABILITY__ */

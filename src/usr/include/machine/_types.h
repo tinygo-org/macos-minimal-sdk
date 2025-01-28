@@ -24,9 +24,11 @@ typedef __UINT64_TYPE__ u_int64_t;
 
 // Some typedefs for types that have since been standardized.
 typedef __INTPTR_TYPE__   __darwin_intptr_t;
+typedef __PTRDIFF_TYPE__  __darwin_ptrdiff_t;
 typedef __SIZE_TYPE__     __darwin_size_t;
 typedef __builtin_va_list __darwin_va_list;
 typedef __WCHAR_TYPE__    __darwin_wchar_t;
+typedef __WINT_TYPE__     __darwin_wint_t;
 
 // These types are defined separately for i386 and arm, but are actually
 // defined as the same type.

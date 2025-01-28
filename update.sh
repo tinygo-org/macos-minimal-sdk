@@ -12,10 +12,10 @@ set -e
 Libc="Libc-$Libc_version"
 xnu="xnu-$xnu_version"
 AvailabilityVersions="AvailabilityVersions-$AvailabilityVersions_version"
+libdispatch="libdispatch-$libdispatch_version"
 libmalloc="libmalloc-$libmalloc_version"
 libplatform="libplatform-$libplatform_version"
 libpthread="libpthread-$libpthread_version"
-CarbonHeaders="CarbonHeaders-$CarbonHeaders_version"
 Libm="Libm-$Libm_version"
 sysroot=src
 include="$sysroot/usr/include"
@@ -23,8 +23,8 @@ include="$sysroot/usr/include"
 # Download libraries (if needed).
 wget -P download --no-clobber --no-verbose \
 	"https://opensource.apple.com/tarballs/AvailabilityVersions/$AvailabilityVersions.tar.gz" \
-	"https://opensource.apple.com/tarballs/CarbonHeaders/$CarbonHeaders.tar.gz" \
 	"https://opensource.apple.com/tarballs/Libc/$Libc.tar.gz" \
+	"https://opensource.apple.com/tarballs/libdispatch/$libdispatch.tar.gz" \
 	"https://opensource.apple.com/tarballs/Libm/$Libm.tar.gz" \
 	"https://opensource.apple.com/tarballs/libmalloc/$libmalloc.tar.gz" \
 	"https://opensource.apple.com/tarballs/libplatform/$libplatform.tar.gz" \
@@ -38,18 +38,31 @@ mkdir -p $include/sys
 mkdir -p $sysroot/usr/local/libexec
 tar -C $sysroot/usr/local/libexec --strip-components=1 -xf "download/$AvailabilityVersions.tar.gz" \
         "AvailabilityVersions-$AvailabilityVersions/availability.pl"
-tar -C $include           --strip-components=1 -xf "download/$CarbonHeaders.tar.gz" \
-        "CarbonHeaders-$CarbonHeaders/TargetConditionals.h"
 tar -C $include           --strip-components=2 -xf "download/$Libc.tar.gz" \
         "Libc-$Libc/include"
+tar -C $include           --strip-components=1 -xf "download/$libdispatch.tar.gz" \
+        "libdispatch-$libdispatch/dispatch" \
+        "libdispatch-$libdispatch/os/clock.h" \
+        "libdispatch-$libdispatch/os/object.h" \
+        "libdispatch-$libdispatch/os/workgroup.h" \
+        "libdispatch-$libdispatch/os/workgroup_base.h" \
+        "libdispatch-$libdispatch/os/workgroup_interval.h" \
+        "libdispatch-$libdispatch/os/workgroup_object.h" \
+        "libdispatch-$libdispatch/os/workgroup_parallel.h"
 tar -C $include           --strip-components=3 -xf "download/$Libm.tar.gz" \
         "Libm-$Libm/Source/Intel/math.h"
 tar -C $include           --strip-components=2 -xf "download/$libmalloc.tar.gz" \
         "libmalloc-$libmalloc/include/malloc"
 tar -C $include           --strip-components=2 -xf "download/$libplatform.tar.gz" \
         "libplatform-$libplatform/include/ucontext.h"
-tar -C $include/sys       --strip-components=3 -xf "download/$libpthread.tar.gz" \
-        "libpthread-$libpthread/include/sys/_pthread"
+tar -C $include           --strip-components=2 -xf "download/$libpthread.tar.gz" \
+        "libpthread-$libpthread/include/sys/_pthread" \
+        "libpthread-$libpthread/include/sys/qos.h" \
+        "libpthread-$libpthread/include/pthread/pthread_impl.h" \
+        "libpthread-$libpthread/include/pthread/qos.h" \
+        "libpthread-$libpthread/include/pthread/sched.h"
+tar -C $include           --strip-components=3 -xf "download/$libpthread.tar.gz" \
+        "libpthread-$libpthread/include/pthread/pthread.h"
 tar -C $include           --strip-components=3 -xf "download/$xnu.tar.gz" \
         "xnu-$xnu/libsyscall/wrappers/gethostuuid.h"
 tar -C $include           --strip-components=2 -xf "download/$xnu.tar.gz" \
@@ -91,6 +104,7 @@ tar -C $include           --strip-components=2 -xf "download/$xnu.tar.gz" \
         "xnu-$xnu/bsd/sys/signal.h" \
         "xnu-$xnu/bsd/sys/select.h" \
         "xnu-$xnu/bsd/sys/_select.h" \
+        "xnu-$xnu/bsd/sys/semaphore.h" \
         "xnu-$xnu/bsd/sys/stat.h" \
         "xnu-$xnu/bsd/sys/stdio.h" \
         "xnu-$xnu/bsd/sys/sysctl.h" \
@@ -106,21 +120,31 @@ tar -C $include           --strip-components=2 -xf "download/$xnu.tar.gz" \
         "xnu-$xnu/bsd/sys/wait.h" \
         "xnu-$xnu/EXTERNAL_HEADERS/Availability.h" \
         "xnu-$xnu/EXTERNAL_HEADERS/AvailabilityInternal.h" \
+        "xnu-$xnu/EXTERNAL_HEADERS/stdarg.h" \
+        "xnu-$xnu/EXTERNAL_HEADERS/stdbool.h" \
         "xnu-$xnu/libkern/libkern/_OSByteOrder.h" \
         "xnu-$xnu/libkern/libkern/arm/OSByteOrder.h" \
         "xnu-$xnu/libkern/libkern/i386/_OSByteOrder.h" \
+        "xnu-$xnu/libkern/os/base.h" \
         "xnu-$xnu/osfmk/arm/arch.h" \
         "xnu-$xnu/osfmk/mach/arm/boolean.h" \
+        "xnu-$xnu/osfmk/mach/arm/kern_return.h" \
         "xnu-$xnu/osfmk/mach/arm/_structs.h" \
         "xnu-$xnu/osfmk/mach/arm/vm_types.h" \
         "xnu-$xnu/osfmk/mach/i386/boolean.h" \
+        "xnu-$xnu/osfmk/mach/i386/kern_return.h" \
         "xnu-$xnu/osfmk/mach/i386/_structs.h" \
         "xnu-$xnu/osfmk/mach/i386/vm_types.h" \
         "xnu-$xnu/osfmk/mach/machine/boolean.h" \
+        "xnu-$xnu/osfmk/mach/machine/kern_return.h" \
         "xnu-$xnu/osfmk/mach/machine/_structs.h" \
         "xnu-$xnu/osfmk/mach/machine/vm_types.h" \
         "xnu-$xnu/osfmk/mach/boolean.h" \
-        "xnu-$xnu/osfmk/mach/port.h"
+        "xnu-$xnu/osfmk/mach/clock_types.h" \
+        "xnu-$xnu/osfmk/mach/kern_return.h" \
+        "xnu-$xnu/osfmk/mach/message.h" \
+        "xnu-$xnu/osfmk/mach/port.h" \
+        "xnu-$xnu/osfmk/mach/time_value.h"
 
 # Generate some files.
 $include/sys/make_symbol_aliasing.sh $sysroot $include/sys/_symbol_aliasing.h
@@ -153,6 +177,15 @@ printf "" > $include/arm/_param.h
 # an open source license.
 cp -p src/signal.h $include/machine/signal.h
 
+# I don't know where this file is coming from, but it's easy to write a
+# replacement with only the necessary parts.
+cp -p src/availability.h $include/os/availability.h
+
+# This was previously a file from CarbonHeaders, but it was very old (didn't
+# include support for arm64) so failed to compile. An empty file seems to be
+# sufficient for now.
+printf "" > $include/TargetConditionals.h
+
 # Replace machine/_types.h, arm/_types.h, and i386/_types.h with a single file.
 # Do forward includes though, because arm/types.h and i386/types.h still
 # include the */_types.h version.
@@ -174,6 +207,12 @@ perl -pi -e 's/\@CONFIG_(EMBEDDED|IPHONE|IPHONE_SIMULATOR)\@ +/0/g' $include/Tar
 
 # Remove PLATFORM_MacOSX ifdef guards. We're always on MacOSX.
 perl -pi -e 's%^(#ifdef PLATFORM_MacOSX|#endif /\* PLATFORM_MacOSX \*/)\n%%g' $include/sys/cdefs.h
+
+# Force __API_AVAILABLE and __API_UNAVAILABLE macro to be a no-op. It results in
+# a compilation error otherwise, and I am not sure how this is supposed to work
+# anyway.
+perl -pi -e 's/#define __API_AVAILABLE\(.*/#define __API_AVAILABLE(...)/g' $include/Availability.h
+perl -pi -e 's/#define __API_UNAVAILABLE\(.*/#define __API_UNAVAILABLE(...)/g' $include/Availability.h
 
 # Now generate the assembly stubs for libSystem.B.dylib.
 rm -f $sysroot/x86_64/libSystem.s $sysroot/arm64/libSystem.s
