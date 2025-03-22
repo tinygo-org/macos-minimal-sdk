@@ -76,7 +76,7 @@ This is only rarely needed: macOS binaries will usually run just fine on a newer
 
 This project is licensed under APSL 2.0, a variety of BSD style licenses, and public domain code:
 
-  * `src/usr/include` is extracted from the Libc, xnu, libpthread, libdispatch, and Libm. The source files are under a mix of the APSL 2.0 and a variety of BSD-style licenses. There are a few files that just say "all rights reserved". All those files have been replaced with a public domain version so they are also in effect open source.
+  * `src/usr/include` is extracted from the Libc, xnu, cctools, libpthread, libdispatch, and Libm. The source files are under a mix of the APSL 2.0 and a variety of BSD-style licenses. There are a few files that just say "all rights reserved". All those files have been replaced with a public domain version so they are also in effect open source.
   * `src/*/libSystem.s` is extracted from the above, but because it's only a list of function names I don't believe it is covered by copyright and therefore can be considered public domain. If it is covered by copyright (I'm not a lawyer), it is covered by the same copyright as `src/usr/include` above.
   * Other files like the various update scripts are placed in the public domain.
 

@@ -55,6 +55,12 @@ ___math_errhandling:
 .global ___mb_cur_max
 ___mb_cur_max:
 
+.global ___memmove_chk
+___memmove_chk:
+
+.global ___memset_chk
+___memset_chk:
+
 .global ___nan
 ___nan:
 
@@ -75,6 +81,12 @@ ___sputc:
 
 .global ___srget
 ___srget:
+
+.global ___stack_chk_fail
+___stack_chk_fail:
+
+.global ___stack_chk_guard
+___stack_chk_guard:
 
 .global ___stderrp
 ___stderrp:

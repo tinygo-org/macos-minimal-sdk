@@ -32,7 +32,13 @@ import clang.cindex
 def generateStubs(sysroot, outfile, target):
     # These symbols are not defined in the header files, but must be declared
     # anyway.
-    symbols = {'dyld_stub_binder', '___bzero', '__tlv_bootstrap'}
+    symbols = {
+        'dyld_stub_binder',
+        '___bzero',
+        '__tlv_bootstrap',
+        '___memmove_chk', '___memset_chk',
+        '___stack_chk_guard', '___stack_chk_fail',
+    }
 
     # Parse the src/libSystem.h file to get a list of functions declared in libSystem.
     index = clang.cindex.Index.create()

@@ -17,6 +17,7 @@ libmalloc="libmalloc-$libmalloc_version"
 libplatform="libplatform-$libplatform_version"
 libpthread="libpthread-$libpthread_version"
 Libm="Libm-$Libm_version"
+cctools="cctools-$cctools_version"
 sysroot=src
 include="$sysroot/usr/include"
 
@@ -29,6 +30,7 @@ wget -P download --no-clobber --no-verbose \
 	"https://opensource.apple.com/tarballs/libmalloc/$libmalloc.tar.gz" \
 	"https://opensource.apple.com/tarballs/libplatform/$libplatform.tar.gz" \
 	"https://opensource.apple.com/tarballs/libpthread/$libpthread.tar.gz" \
+	"https://opensource.apple.com/tarballs/cctools/$cctools.tar.gz" \
 	"https://opensource.apple.com/tarballs/xnu/$xnu.tar.gz"
 
 # Extract source files.
@@ -54,6 +56,7 @@ tar -C $include           --strip-components=3 -xf "download/$Libm.tar.gz" \
 tar -C $include           --strip-components=2 -xf "download/$libmalloc.tar.gz" \
         "libmalloc-$libmalloc/include/malloc"
 tar -C $include           --strip-components=2 -xf "download/$libplatform.tar.gz" \
+        "libplatform-$libplatform/include/setjmp.h" \
         "libplatform-$libplatform/include/ucontext.h"
 tar -C $include           --strip-components=2 -xf "download/$libpthread.tar.gz" \
         "libpthread-$libpthread/include/sys/_pthread" \
@@ -63,6 +66,9 @@ tar -C $include           --strip-components=2 -xf "download/$libpthread.tar.gz"
         "libpthread-$libpthread/include/pthread/sched.h"
 tar -C $include           --strip-components=3 -xf "download/$libpthread.tar.gz" \
         "libpthread-$libpthread/include/pthread/pthread.h"
+tar -C $include           --strip-components=2 -xf "download/$cctools.tar.gz" \
+        "cctools-$cctools/include/mach-o/getsect.h" \
+        "cctools-$cctools/include/mach-o/loader.h"
 tar -C $include           --strip-components=3 -xf "download/$xnu.tar.gz" \
         "xnu-$xnu/libsyscall/wrappers/gethostuuid.h"
 tar -C $include           --strip-components=2 -xf "download/$xnu.tar.gz" \
@@ -122,29 +128,43 @@ tar -C $include           --strip-components=2 -xf "download/$xnu.tar.gz" \
         "xnu-$xnu/EXTERNAL_HEADERS/AvailabilityInternal.h" \
         "xnu-$xnu/EXTERNAL_HEADERS/stdarg.h" \
         "xnu-$xnu/EXTERNAL_HEADERS/stdbool.h" \
+        "xnu-$xnu/EXTERNAL_HEADERS/AvailabilityMacros.h" \
         "xnu-$xnu/libkern/libkern/_OSByteOrder.h" \
         "xnu-$xnu/libkern/libkern/arm/OSByteOrder.h" \
         "xnu-$xnu/libkern/libkern/i386/_OSByteOrder.h" \
         "xnu-$xnu/libkern/os/base.h" \
         "xnu-$xnu/osfmk/arm/arch.h" \
+        "xnu-$xnu/osfmk/i386/eflags.h" \
         "xnu-$xnu/osfmk/mach/arm/boolean.h" \
         "xnu-$xnu/osfmk/mach/arm/kern_return.h" \
         "xnu-$xnu/osfmk/mach/arm/_structs.h" \
+        "xnu-$xnu/osfmk/mach/arm/kern_return.h" \
+        "xnu-$xnu/osfmk/mach/arm/thread_state.h" \
+        "xnu-$xnu/osfmk/mach/arm/thread_status.h" \
         "xnu-$xnu/osfmk/mach/arm/vm_types.h" \
         "xnu-$xnu/osfmk/mach/i386/boolean.h" \
         "xnu-$xnu/osfmk/mach/i386/kern_return.h" \
+        "xnu-$xnu/osfmk/mach/i386/fp_reg.h" \
         "xnu-$xnu/osfmk/mach/i386/_structs.h" \
+        "xnu-$xnu/osfmk/mach/i386/kern_return.h" \
+        "xnu-$xnu/osfmk/mach/i386/thread_state.h" \
+        "xnu-$xnu/osfmk/mach/i386/thread_status.h" \
         "xnu-$xnu/osfmk/mach/i386/vm_types.h" \
         "xnu-$xnu/osfmk/mach/machine/boolean.h" \
         "xnu-$xnu/osfmk/mach/machine/kern_return.h" \
         "xnu-$xnu/osfmk/mach/machine/_structs.h" \
+        "xnu-$xnu/osfmk/mach/machine/kern_return.h" \
+        "xnu-$xnu/osfmk/mach/machine/thread_state.h" \
+        "xnu-$xnu/osfmk/mach/machine/thread_status.h" \
         "xnu-$xnu/osfmk/mach/machine/vm_types.h" \
         "xnu-$xnu/osfmk/mach/boolean.h" \
         "xnu-$xnu/osfmk/mach/clock_types.h" \
         "xnu-$xnu/osfmk/mach/kern_return.h" \
         "xnu-$xnu/osfmk/mach/message.h" \
         "xnu-$xnu/osfmk/mach/port.h" \
-        "xnu-$xnu/osfmk/mach/time_value.h"
+        "xnu-$xnu/osfmk/mach/thread_status.h" \
+        "xnu-$xnu/osfmk/mach/time_value.h" \
+        "xnu-$xnu/osfmk/mach/vm_types.h"
 
 # Generate some files.
 $include/sys/make_symbol_aliasing.sh $sysroot $include/sys/_symbol_aliasing.h
@@ -177,9 +197,10 @@ printf "" > $include/arm/_param.h
 # an open source license.
 cp -p src/signal.h $include/machine/signal.h
 
-# I don't know where this file is coming from, but it's easy to write a
+# I don't know where these files are coming from, but it's easy to write a
 # replacement with only the necessary parts.
 cp -p src/availability.h $include/os/availability.h
+cp -p src/TargetConditionals.h $include/TargetConditionals.h
 
 # This was previously a file from CarbonHeaders, but it was very old (didn't
 # include support for arm64) so failed to compile. An empty file seems to be

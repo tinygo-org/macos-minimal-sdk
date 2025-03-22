@@ -14,7 +14,10 @@ libplatform_version=254.80.2
 libpthread_version=454.120.2
 xnu_version=7195.141.2
 
-# These are not part of the list above and don't seem to have any updates
+# These are the values for Developer Tools 16.0:
+# https://opensource.apple.com/releases/
+cctools_version=1021.4
+
+# These are not part of the lists above and don't seem to have any updates
 # recently.
-CarbonHeaders_version=18.1
 Libm_version=2026
