@@ -202,11 +202,6 @@ cp -p src/signal.h $include/machine/signal.h
 cp -p src/availability.h $include/os/availability.h
 cp -p src/TargetConditionals.h $include/TargetConditionals.h
 
-# This was previously a file from CarbonHeaders, but it was very old (didn't
-# include support for arm64) so failed to compile. An empty file seems to be
-# sufficient for now.
-printf "" > $include/TargetConditionals.h
-
 # Replace machine/_types.h, arm/_types.h, and i386/_types.h with a single file.
 # Do forward includes though, because arm/types.h and i386/types.h still
 # include the */_types.h version.
