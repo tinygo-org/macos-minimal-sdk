@@ -41,7 +41,7 @@ def generateStubs(sysroot, outfile, target):
         # Exported by libSystem, but declared in headers that are not part of
         # this minimal SDK:
         '_ioctl',           # <sys/ioctl.h>
-        '___sincos_stret',  # newer <math.h>; called by LLVM-generated code
+        '___sincos_stret', '___sincosf_stret'  # newer <math.h>; called by LLVM-generated code
     }
 
     # Parse the src/libSystem.h file to get a list of functions declared in libSystem.

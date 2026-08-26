@@ -73,6 +73,9 @@ ___sigbits:
 .global ___sincos_stret
 ___sincos_stret:
 
+.global ___sincosf_stret
+___sincosf_stret:
+
 .global ___snprintf_chk
 ___snprintf_chk:
 
