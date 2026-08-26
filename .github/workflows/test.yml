@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Install Clang
         run: |
           wget https://apt.llvm.org/llvm.sh
@@ -17,15 +17,15 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Install Clang
-        run: brew install llvm
+        run: brew install llvm lld
       - name: Run tests
         run: make test CLANG=$(brew --prefix llvm)/bin/clang
   Test-Windows:
     runs-on: windows-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Run tests
         run: make test CLANG=clang
