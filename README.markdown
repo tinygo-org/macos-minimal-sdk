@@ -22,10 +22,10 @@ int main(void) {
 }
 ```
 
-You can then build it on any host with Clang 13+ installed like this (using `clang-13` here as an example):
+You can then build it on any host with Clang 13+ installed like this (using `clang` here as an example):
 
 ```
-$ clang-13 --target=x86_64-apple-macos10.12 --sysroot=sysroot-macos-x86_64 -fuse-ld=lld -o hello hello.c
+$ clang --target=x86_64-apple-macos10.12 --sysroot=sysroot-macos-x86_64 -fuse-ld=lld -o hello hello.c
 $ file hello
 hello: Mach-O 64-bit x86_64 executable, flags:<NOUNDEFS|DYLDLINK|TWOLEVEL|PIE>
 ```
@@ -33,7 +33,7 @@ hello: Mach-O 64-bit x86_64 executable, flags:<NOUNDEFS|DYLDLINK|TWOLEVEL|PIE>
 It can also compile to ARM64 (aka "Apple Silicon"):
 
 ```
-$ clang-13 --target=arm64-apple-macos11 --sysroot=sysroot-macos-arm64 -fuse-ld=lld -o hello hello.c
+$ clang --target=arm64-apple-macos11 --sysroot=sysroot-macos-arm64 -fuse-ld=lld -o hello hello.c
 $ file hello
 hello: Mach-O 64-bit arm64 executable, flags:<NOUNDEFS|DYLDLINK|TWOLEVEL|PIE>
 ```
