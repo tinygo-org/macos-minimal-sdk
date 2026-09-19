@@ -71,6 +71,8 @@ tar -C $include           --strip-components=2 -xf "download/$cctools.tar.gz" \
         "cctools-$cctools/include/mach-o/loader.h"
 tar -C $include           --strip-components=3 -xf "download/$xnu.tar.gz" \
         "xnu-$xnu/libsyscall/wrappers/gethostuuid.h"
+tar -C $include           --strip-components=4 -xf "download/$xnu.tar.gz" \
+        "xnu-$xnu/libsyscall/wrappers/spawn/spawn.h"
 tar -C $include           --strip-components=2 -xf "download/$xnu.tar.gz" \
         "xnu-$xnu/bsd/arm/endian.h" \
         "xnu-$xnu/bsd/arm/limits.h" \
@@ -114,6 +116,7 @@ tar -C $include           --strip-components=2 -xf "download/$xnu.tar.gz" \
         "xnu-$xnu/bsd/sys/_select.h" \
         "xnu-$xnu/bsd/sys/semaphore.h" \
         "xnu-$xnu/bsd/sys/socket.h" \
+        "xnu-$xnu/bsd/sys/spawn.h" \
         "xnu-$xnu/bsd/sys/stat.h" \
         "xnu-$xnu/bsd/sys/stdio.h" \
         "xnu-$xnu/bsd/sys/sysctl.h" \
@@ -139,6 +142,7 @@ tar -C $include           --strip-components=2 -xf "download/$xnu.tar.gz" \
         "xnu-$xnu/osfmk/arm/arch.h" \
         "xnu-$xnu/osfmk/i386/eflags.h" \
         "xnu-$xnu/osfmk/mach/arm/boolean.h" \
+        "xnu-$xnu/osfmk/mach/arm/exception.h" \
         "xnu-$xnu/osfmk/mach/arm/kern_return.h" \
         "xnu-$xnu/osfmk/mach/arm/_structs.h" \
         "xnu-$xnu/osfmk/mach/arm/kern_return.h" \
@@ -146,6 +150,7 @@ tar -C $include           --strip-components=2 -xf "download/$xnu.tar.gz" \
         "xnu-$xnu/osfmk/mach/arm/thread_status.h" \
         "xnu-$xnu/osfmk/mach/arm/vm_types.h" \
         "xnu-$xnu/osfmk/mach/i386/boolean.h" \
+        "xnu-$xnu/osfmk/mach/i386/exception.h" \
         "xnu-$xnu/osfmk/mach/i386/kern_return.h" \
         "xnu-$xnu/osfmk/mach/i386/fp_reg.h" \
         "xnu-$xnu/osfmk/mach/i386/_structs.h" \
@@ -154,6 +159,7 @@ tar -C $include           --strip-components=2 -xf "download/$xnu.tar.gz" \
         "xnu-$xnu/osfmk/mach/i386/thread_status.h" \
         "xnu-$xnu/osfmk/mach/i386/vm_types.h" \
         "xnu-$xnu/osfmk/mach/machine/boolean.h" \
+        "xnu-$xnu/osfmk/mach/machine/exception.h" \
         "xnu-$xnu/osfmk/mach/machine/kern_return.h" \
         "xnu-$xnu/osfmk/mach/machine/_structs.h" \
         "xnu-$xnu/osfmk/mach/machine/kern_return.h" \
@@ -162,12 +168,15 @@ tar -C $include           --strip-components=2 -xf "download/$xnu.tar.gz" \
         "xnu-$xnu/osfmk/mach/machine/vm_types.h" \
         "xnu-$xnu/osfmk/mach/boolean.h" \
         "xnu-$xnu/osfmk/mach/clock_types.h" \
+        "xnu-$xnu/osfmk/mach/exception_types.h" \
         "xnu-$xnu/osfmk/mach/kern_return.h" \
+        "xnu-$xnu/osfmk/mach/machine.h" \
         "xnu-$xnu/osfmk/mach/message.h" \
         "xnu-$xnu/osfmk/mach/port.h" \
         "xnu-$xnu/osfmk/mach/thread_status.h" \
         "xnu-$xnu/osfmk/mach/time_value.h" \
-        "xnu-$xnu/osfmk/mach/vm_types.h"
+        "xnu-$xnu/osfmk/mach/vm_types.h" \
+        "xnu-$xnu/osfmk/mach_debug/ipc_info.h"
 
 # Generate some files.
 $include/sys/make_symbol_aliasing.sh $sysroot $include/sys/_symbol_aliasing.h
@@ -236,6 +245,10 @@ perl -pi -e 's%^(#ifdef PLATFORM_MacOSX|#endif /\* PLATFORM_MacOSX \*/)\n%%g' $i
 # anyway.
 perl -pi -e 's/#define __API_AVAILABLE\(.*/#define __API_AVAILABLE(...)/g' $include/Availability.h
 perl -pi -e 's/#define __API_UNAVAILABLE\(.*/#define __API_UNAVAILABLE(...)/g' $include/Availability.h
+
+# Define __SPI_AVAILABLE as a no-op as well. It is used by spawn.h but not
+# defined anywhere in the xnu Availability.h.
+echo "#define __SPI_AVAILABLE(...)" >> $include/Availability.h
 
 # Now generate the assembly stubs for libSystem.B.dylib.
 rm -f $sysroot/x86_64/libSystem.s $sysroot/arm64/libSystem.s

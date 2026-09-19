@@ -2026,6 +2026,96 @@ _posix_memalign:
 .global _posix_openpt
 _posix_openpt:
 
+.global _posix_spawn
+_posix_spawn:
+
+.global _posix_spawn_file_actions_addchdir_np
+_posix_spawn_file_actions_addchdir_np:
+
+.global _posix_spawn_file_actions_addclose
+_posix_spawn_file_actions_addclose:
+
+.global _posix_spawn_file_actions_adddup2
+_posix_spawn_file_actions_adddup2:
+
+.global _posix_spawn_file_actions_addfchdir_np
+_posix_spawn_file_actions_addfchdir_np:
+
+.global _posix_spawn_file_actions_addinherit_np
+_posix_spawn_file_actions_addinherit_np:
+
+.global _posix_spawn_file_actions_addopen
+_posix_spawn_file_actions_addopen:
+
+.global _posix_spawn_file_actions_destroy
+_posix_spawn_file_actions_destroy:
+
+.global _posix_spawn_file_actions_init
+_posix_spawn_file_actions_init:
+
+.global _posix_spawnattr_destroy
+_posix_spawnattr_destroy:
+
+.global _posix_spawnattr_getarchpref_np
+_posix_spawnattr_getarchpref_np:
+
+.global _posix_spawnattr_getbinpref_np
+_posix_spawnattr_getbinpref_np:
+
+.global _posix_spawnattr_getflags
+_posix_spawnattr_getflags:
+
+.global _posix_spawnattr_getpgroup
+_posix_spawnattr_getpgroup:
+
+.global _posix_spawnattr_getsigdefault
+_posix_spawnattr_getsigdefault:
+
+.global _posix_spawnattr_getsigmask
+_posix_spawnattr_getsigmask:
+
+.global _posix_spawnattr_init
+_posix_spawnattr_init:
+
+.global _posix_spawnattr_set_csm_np
+_posix_spawnattr_set_csm_np:
+
+.global _posix_spawnattr_setarchpref_np
+_posix_spawnattr_setarchpref_np:
+
+.global _posix_spawnattr_setauditsessionport_np
+_posix_spawnattr_setauditsessionport_np:
+
+.global _posix_spawnattr_setbinpref_np
+_posix_spawnattr_setbinpref_np:
+
+.global _posix_spawnattr_setexceptionports_np
+_posix_spawnattr_setexceptionports_np:
+
+.global _posix_spawnattr_setflags
+_posix_spawnattr_setflags:
+
+.global _posix_spawnattr_setnosmt_np
+_posix_spawnattr_setnosmt_np:
+
+.global _posix_spawnattr_setpgroup
+_posix_spawnattr_setpgroup:
+
+.global _posix_spawnattr_setsigdefault
+_posix_spawnattr_setsigdefault:
+
+.global _posix_spawnattr_setsigmask
+_posix_spawnattr_setsigmask:
+
+.global _posix_spawnattr_setspecialport_np
+_posix_spawnattr_setspecialport_np:
+
+.global _posix_spawnattr_setsuidcredport_np
+_posix_spawnattr_setsuidcredport_np:
+
+.global _posix_spawnp
+_posix_spawnp:
+
 .global _pow
 _pow:
 

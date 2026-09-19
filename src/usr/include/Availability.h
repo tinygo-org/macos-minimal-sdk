@@ -418,3 +418,4 @@
 #define __API_UNAVAILABLE(...)
 
 #endif /* __AVAILABILITY__ */
+#define __SPI_AVAILABLE(...)
