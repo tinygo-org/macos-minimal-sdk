@@ -91,7 +91,9 @@ tar -C $include           --strip-components=2 -xf "download/$xnu.tar.gz" \
         "xnu-$xnu/bsd/machine/limits.h" \
         "xnu-$xnu/bsd/machine/_mcontext.h" \
         "xnu-$xnu/bsd/machine/param.h" \
+        "xnu-$xnu/bsd/machine/_param.h" \
         "xnu-$xnu/bsd/machine/types.h" \
+        "xnu-$xnu/bsd/net/net_kev.h" \
         "xnu-$xnu/bsd/sys/appleapiopts.h" \
         "xnu-$xnu/bsd/sys/cdefs.h" \
         "xnu-$xnu/bsd/sys/dirent.h" \
@@ -111,6 +113,7 @@ tar -C $include           --strip-components=2 -xf "download/$xnu.tar.gz" \
         "xnu-$xnu/bsd/sys/select.h" \
         "xnu-$xnu/bsd/sys/_select.h" \
         "xnu-$xnu/bsd/sys/semaphore.h" \
+        "xnu-$xnu/bsd/sys/socket.h" \
         "xnu-$xnu/bsd/sys/stat.h" \
         "xnu-$xnu/bsd/sys/stdio.h" \
         "xnu-$xnu/bsd/sys/sysctl.h" \
@@ -191,7 +194,11 @@ cp -p src/stdint.h $include/stdint.h
 # license. So far, this seems to work well enough.
 printf "" > $include/libkern/arm/OSByteOrder.h
 printf "" > $include/arm/_limits.h
-printf "" > $include/arm/_param.h
+
+# Replace arm/_param.h, which doesn't have an open source license. The
+# __DARWIN_ALIGN* macros it defines are needed by the CMSG_* macros in
+# sys/socket.h.
+cp -p src/_param.h $include/arm/_param.h
 
 # Replace src/signal.h. This avoids including arm/signal.h, which doesn't have
 # an open source license.

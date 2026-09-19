@@ -55,6 +55,9 @@ ___math_errhandling:
 .global ___mb_cur_max
 ___mb_cur_max:
 
+.global ___memcpy_chk
+___memcpy_chk:
+
 .global ___memmove_chk
 ___memmove_chk:
 
@@ -189,6 +192,9 @@ _abort:
 
 .global _abs
 _abs:
+
+.global _accept
+_accept:
 
 .global _access
 _access:
@@ -349,6 +355,9 @@ _bcmp:
 .global _bcopy
 _bcopy:
 
+.global _bind
+_bind:
+
 .global _brk
 _brk:
 
@@ -460,6 +469,12 @@ _closedir:
 .global _confstr
 _confstr:
 
+.global _connect
+_connect:
+
+.global _connectx
+_connectx:
+
 .global _copysign
 _copysign:
 
@@ -522,6 +537,9 @@ _difftime:
 
 .global _dirfd
 _dirfd:
+
+.global _disconnectx
+_disconnectx:
 
 .global _dispatch_activate
 _dispatch_activate:
@@ -1363,6 +1381,9 @@ _getpass:
 .global _getpeereid
 _getpeereid:
 
+.global _getpeername
+_getpeername:
+
 .global _getpgid
 _getpgid:
 
@@ -1395,6 +1416,12 @@ _getsgroups_np:
 
 .global _getsid
 _getsid:
+
+.global _getsockname
+_getsockname:
+
+.global _getsockopt
+_getsockopt:
 
 .global _getsubopt
 _getsubopt:
@@ -1545,6 +1572,9 @@ _link:
 
 .global _linkat
 _linkat:
+
+.global _listen
+_listen:
 
 .global _llabs
 _llabs:
@@ -1962,6 +1992,9 @@ _pclose:
 
 .global _perror
 _perror:
+
+.global _pfctlinput
+_pfctlinput:
 
 .global _pipe
 _pipe:
@@ -2425,6 +2458,15 @@ _realpath$DARWIN_EXTSN:
 .global _reboot
 _reboot:
 
+.global _recv
+_recv:
+
+.global _recvfrom
+_recvfrom:
+
+.global _recvmsg
+_recvmsg:
+
 .global _remainder
 _remainder:
 
@@ -2563,6 +2605,18 @@ _seekdir:
 .global _select
 _select:
 
+.global _send
+_send:
+
+.global _sendfile
+_sendfile:
+
+.global _sendmsg
+_sendmsg:
+
+.global _sendto
+_sendto:
+
 .global _setattrlist
 _setattrlist:
 
@@ -2659,6 +2713,9 @@ _setsgroups_np:
 .global _setsid
 _setsid:
 
+.global _setsockopt
+_setsockopt:
+
 .global _setstate
 _setstate:
 
@@ -2682,6 +2739,9 @@ _shm_open:
 
 .global _shm_unlink
 _shm_unlink:
+
+.global _shutdown
+_shutdown:
 
 .global _sigaction
 _sigaction:
@@ -2775,6 +2835,15 @@ _sleep:
 
 .global _snprintf
 _snprintf:
+
+.global _sockatmark
+_sockatmark:
+
+.global _socket
+_socket:
+
+.global _socketpair
+_socketpair:
 
 .global _sprintf
 _sprintf:

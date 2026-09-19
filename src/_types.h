@@ -36,5 +36,6 @@ typedef unsigned long    __darwin_clock_t;
 typedef int              __darwin_ct_rune_t;
 typedef unsigned int     __darwin_natural_t;
 typedef __darwin_wchar_t __darwin_rune_t;
+typedef __uint32_t       __darwin_socklen_t;
 typedef long             __darwin_ssize_t;
 typedef long             __darwin_time_t;

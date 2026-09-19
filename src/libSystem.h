@@ -13,6 +13,7 @@
 #include <strings.h>
 #include <sys/errno.h>
 #include <sys/mman.h>
+#include <sys/socket.h>
 #include <sys/stat.h>
 #include <sys/sysctl.h>
 #include <sys/types.h>
