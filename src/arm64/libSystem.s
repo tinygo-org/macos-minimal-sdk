@@ -55,6 +55,9 @@ ___math_errhandling:
 .global ___mb_cur_max
 ___mb_cur_max:
 
+.global ___memcpy_chk
+___memcpy_chk:
+
 .global ___memmove_chk
 ___memmove_chk:
 
@@ -189,6 +192,9 @@ _abort:
 
 .global _abs
 _abs:
+
+.global _accept
+_accept:
 
 .global _access
 _access:
@@ -349,6 +355,9 @@ _bcmp:
 .global _bcopy
 _bcopy:
 
+.global _bind
+_bind:
+
 .global _brk
 _brk:
 
@@ -460,6 +469,12 @@ _closedir:
 .global _confstr
 _confstr:
 
+.global _connect
+_connect:
+
+.global _connectx
+_connectx:
+
 .global _copysign
 _copysign:
 
@@ -522,6 +537,9 @@ _difftime:
 
 .global _dirfd
 _dirfd:
+
+.global _disconnectx
+_disconnectx:
 
 .global _dispatch_activate
 _dispatch_activate:
@@ -1363,6 +1381,9 @@ _getpass:
 .global _getpeereid
 _getpeereid:
 
+.global _getpeername
+_getpeername:
+
 .global _getpgid
 _getpgid:
 
@@ -1395,6 +1416,12 @@ _getsgroups_np:
 
 .global _getsid
 _getsid:
+
+.global _getsockname
+_getsockname:
+
+.global _getsockopt
+_getsockopt:
 
 .global _getsubopt
 _getsubopt:
@@ -1545,6 +1572,9 @@ _link:
 
 .global _linkat
 _linkat:
+
+.global _listen
+_listen:
 
 .global _llabs
 _llabs:
@@ -1963,6 +1993,9 @@ _pclose:
 .global _perror
 _perror:
 
+.global _pfctlinput
+_pfctlinput:
+
 .global _pipe
 _pipe:
 
@@ -1980,6 +2013,96 @@ _posix_memalign:
 
 .global _posix_openpt
 _posix_openpt:
+
+.global _posix_spawn
+_posix_spawn:
+
+.global _posix_spawn_file_actions_addchdir_np
+_posix_spawn_file_actions_addchdir_np:
+
+.global _posix_spawn_file_actions_addclose
+_posix_spawn_file_actions_addclose:
+
+.global _posix_spawn_file_actions_adddup2
+_posix_spawn_file_actions_adddup2:
+
+.global _posix_spawn_file_actions_addfchdir_np
+_posix_spawn_file_actions_addfchdir_np:
+
+.global _posix_spawn_file_actions_addinherit_np
+_posix_spawn_file_actions_addinherit_np:
+
+.global _posix_spawn_file_actions_addopen
+_posix_spawn_file_actions_addopen:
+
+.global _posix_spawn_file_actions_destroy
+_posix_spawn_file_actions_destroy:
+
+.global _posix_spawn_file_actions_init
+_posix_spawn_file_actions_init:
+
+.global _posix_spawnattr_destroy
+_posix_spawnattr_destroy:
+
+.global _posix_spawnattr_getarchpref_np
+_posix_spawnattr_getarchpref_np:
+
+.global _posix_spawnattr_getbinpref_np
+_posix_spawnattr_getbinpref_np:
+
+.global _posix_spawnattr_getflags
+_posix_spawnattr_getflags:
+
+.global _posix_spawnattr_getpgroup
+_posix_spawnattr_getpgroup:
+
+.global _posix_spawnattr_getsigdefault
+_posix_spawnattr_getsigdefault:
+
+.global _posix_spawnattr_getsigmask
+_posix_spawnattr_getsigmask:
+
+.global _posix_spawnattr_init
+_posix_spawnattr_init:
+
+.global _posix_spawnattr_set_csm_np
+_posix_spawnattr_set_csm_np:
+
+.global _posix_spawnattr_setarchpref_np
+_posix_spawnattr_setarchpref_np:
+
+.global _posix_spawnattr_setauditsessionport_np
+_posix_spawnattr_setauditsessionport_np:
+
+.global _posix_spawnattr_setbinpref_np
+_posix_spawnattr_setbinpref_np:
+
+.global _posix_spawnattr_setexceptionports_np
+_posix_spawnattr_setexceptionports_np:
+
+.global _posix_spawnattr_setflags
+_posix_spawnattr_setflags:
+
+.global _posix_spawnattr_setnosmt_np
+_posix_spawnattr_setnosmt_np:
+
+.global _posix_spawnattr_setpgroup
+_posix_spawnattr_setpgroup:
+
+.global _posix_spawnattr_setsigdefault
+_posix_spawnattr_setsigdefault:
+
+.global _posix_spawnattr_setsigmask
+_posix_spawnattr_setsigmask:
+
+.global _posix_spawnattr_setspecialport_np
+_posix_spawnattr_setspecialport_np:
+
+.global _posix_spawnattr_setsuidcredport_np
+_posix_spawnattr_setsuidcredport_np:
+
+.global _posix_spawnp
+_posix_spawnp:
 
 .global _pow
 _pow:
@@ -2425,6 +2548,15 @@ _realpath$DARWIN_EXTSN:
 .global _reboot
 _reboot:
 
+.global _recv
+_recv:
+
+.global _recvfrom
+_recvfrom:
+
+.global _recvmsg
+_recvmsg:
+
 .global _remainder
 _remainder:
 
@@ -2563,6 +2695,18 @@ _seekdir:
 .global _select
 _select:
 
+.global _send
+_send:
+
+.global _sendfile
+_sendfile:
+
+.global _sendmsg
+_sendmsg:
+
+.global _sendto
+_sendto:
+
 .global _setattrlist
 _setattrlist:
 
@@ -2659,6 +2803,9 @@ _setsgroups_np:
 .global _setsid
 _setsid:
 
+.global _setsockopt
+_setsockopt:
+
 .global _setstate
 _setstate:
 
@@ -2682,6 +2829,9 @@ _shm_open:
 
 .global _shm_unlink
 _shm_unlink:
+
+.global _shutdown
+_shutdown:
 
 .global _sigaction
 _sigaction:
@@ -2775,6 +2925,15 @@ _sleep:
 
 .global _snprintf
 _snprintf:
+
+.global _sockatmark
+_sockatmark:
+
+.global _socket
+_socket:
+
+.global _socketpair
+_socketpair:
 
 .global _sprintf
 _sprintf:
