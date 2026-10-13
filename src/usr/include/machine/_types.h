@@ -38,3 +38,11 @@ typedef unsigned int     __darwin_natural_t;
 typedef __darwin_wchar_t __darwin_rune_t;
 typedef long             __darwin_ssize_t;
 typedef long             __darwin_time_t;
+
+// Opaque conversion state for the multibyte functions in wchar.h, laid out as
+// in the real SDK so it is the same size and alignment as what libSystem uses.
+typedef union {
+  char      __mbstate8[128];
+  long long _mbstateL;
+} __mbstate_t;
+typedef __mbstate_t __darwin_mbstate_t;
