@@ -36,7 +36,16 @@ sysroot-macos-arm64/usr/lib/libSystem.dylib:
 	$(CLANG) $(DYLDFLAGS) --target=arm64-apple-macos11 -o $(dir $@)/libSystem.B.dylib src/x86_64/libSystem.s
 	ln -sf libSystem.B.dylib $@
 
-test: sysroots
+STDINT_CHECK = $(CLANG) -nostdlibinc -isystem src/usr/include -Werror -fsyntax-only
+
+.PHONY: test-stdint
+test-stdint:
+	$(STDINT_CHECK) --target=x86_64-apple-macos10.12 -std=c11 test/stdint.c
+	$(STDINT_CHECK) --target=arm64-apple-macos11 -std=c11 test/stdint.c
+	$(STDINT_CHECK) --target=x86_64-apple-macos10.12 -x c++ -std=c++17 test/stdint.c
+	$(STDINT_CHECK) --target=arm64-apple-macos11 -x c++ -std=c++17 test/stdint.c
+
+test: test-stdint sysroots
 	$(CLANG) --target=x86_64-apple-macos10.12 --sysroot=sysroot-macos-x86_64 -fuse-ld=lld -o hello test/hello.c
 	file hello
 	$(CLANG) --target=arm64-apple-macos11     --sysroot=sysroot-macos-arm64  -fuse-ld=lld -o hello test/hello.c
