@@ -51,6 +51,56 @@ typedef __UINTPTR_TYPE__ uintptr_t;
 typedef __INTMAX_TYPE__  intmax_t;
 typedef __UINTMAX_TYPE__ uintmax_t;
 
+// Limits of exact-width integer types:
+#define INT8_MIN (-INT8_MAX - 1)
+#define INT16_MIN (-INT16_MAX - 1)
+#define INT32_MIN (-INT32_MAX - 1)
+#define INT64_MIN (-INT64_MAX - 1)
+#define INT8_MAX __INT8_MAX__
+#define INT16_MAX __INT16_MAX__
+#define INT32_MAX __INT32_MAX__
+#define INT64_MAX __INT64_MAX__
+#define UINT8_MAX __UINT8_MAX__
+#define UINT16_MAX __UINT16_MAX__
+#define UINT32_MAX __UINT32_MAX__
+#define UINT64_MAX __UINT64_MAX__
+
+// Limits of minimum-width integer types:
+#define INT_LEAST8_MIN (-INT_LEAST8_MAX - 1)
+#define INT_LEAST16_MIN (-INT_LEAST16_MAX - 1)
+#define INT_LEAST32_MIN (-INT_LEAST32_MAX - 1)
+#define INT_LEAST64_MIN (-INT_LEAST64_MAX - 1)
+#define INT_LEAST8_MAX __INT_LEAST8_MAX__
+#define INT_LEAST16_MAX __INT_LEAST16_MAX__
+#define INT_LEAST32_MAX __INT_LEAST32_MAX__
+#define INT_LEAST64_MAX __INT_LEAST64_MAX__
+#define UINT_LEAST8_MAX __UINT_LEAST8_MAX__
+#define UINT_LEAST16_MAX __UINT_LEAST16_MAX__
+#define UINT_LEAST32_MAX __UINT_LEAST32_MAX__
+#define UINT_LEAST64_MAX __UINT_LEAST64_MAX__
+
+// Limits of fastest minimum-width integer types:
+#define INT_FAST8_MIN (-INT_FAST8_MAX - 1)
+#define INT_FAST16_MIN (-INT_FAST16_MAX - 1)
+#define INT_FAST32_MIN (-INT_FAST32_MAX - 1)
+#define INT_FAST64_MIN (-INT_FAST64_MAX - 1)
+#define INT_FAST8_MAX __INT_FAST8_MAX__
+#define INT_FAST16_MAX __INT_FAST16_MAX__
+#define INT_FAST32_MAX __INT_FAST32_MAX__
+#define INT_FAST64_MAX __INT_FAST64_MAX__
+#define UINT_FAST8_MAX __UINT_FAST8_MAX__
+#define UINT_FAST16_MAX __UINT_FAST16_MAX__
+#define UINT_FAST32_MAX __UINT_FAST32_MAX__
+#define UINT_FAST64_MAX __UINT_FAST64_MAX__
+
+// Limits of pointer and greatest-width integer types:
+#define INTPTR_MIN (-INTPTR_MAX - 1)
+#define INTPTR_MAX __INTPTR_MAX__
+#define UINTPTR_MAX __UINTPTR_MAX__
+#define INTMAX_MIN (-INTMAX_MAX - 1)
+#define INTMAX_MAX __INTMAX_MAX__
+#define UINTMAX_MAX __UINTMAX_MAX__
+
 // Limits of ptrdiff_t:
 #define PTRDIFF_MIN (-__PTRDIFF_MAX__ - 1)
 #define PTRDIFF_MAX __PTRDIFF_MAX__
@@ -70,4 +120,16 @@ typedef __UINTMAX_TYPE__ uintmax_t;
 #define WINT_MIN __WINT_MIN__
 #define WINT_MAX __WINT_MAX__
 
-// TODO: define constants like INT64_C and UINTMAX_C.
+// Integer constant expressions:
+// Suffixes are fixed for 64-bit Darwin. Pasting __INT64_C_SUFFIX__ breaks if
+// user code defines L or LL. https://github.com/llvm/llvm-project/issues/85995
+#define INT8_C(value) value
+#define INT16_C(value) value
+#define INT32_C(value) value
+#define INT64_C(value) value##LL
+#define UINT8_C(value) value
+#define UINT16_C(value) value
+#define UINT32_C(value) value##U
+#define UINT64_C(value) value##ULL
+#define INTMAX_C(value) value##L
+#define UINTMAX_C(value) value##UL

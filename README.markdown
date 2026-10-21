@@ -50,6 +50,10 @@ make
 
 This builds both the x86\_64 and the arm64 sysroots and should therefore cover most Macs.
 
+Run `make test-stdint` to check integer limits and constants in C and C++ for
+both architectures. `make test` also runs these checks before building the
+example programs.
+
 ## How it works
 
 A libc comes in two parts: a set of header files and a binary libc that the linker will link against. Normally, you'd use the header files and a binary libc from your operating system. That of course won't work here: we will need to cross compile. Cross compiling usually means that you have to copy the important files (the header files and the libc) into a directory that you can then point your compiler and linker to. This is called a sysroot.
