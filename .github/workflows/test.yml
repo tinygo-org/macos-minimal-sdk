@@ -1,5 +1,9 @@
 name: Test sysroots
-on: [push]
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
 jobs:
   Test-Linux:
     runs-on: ubuntu-latest
