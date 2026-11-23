@@ -10,6 +10,9 @@ _KERNEL_SECURITY_TOKEN:
 .global __Exit
 __Exit:
 
+.global __NSGetExecutablePath
+__NSGetExecutablePath:
+
 .global ___bzero
 ___bzero:
 
@@ -868,6 +871,9 @@ _dispatch_write:
 .global _div
 _div:
 
+.global _dladdr
+_dladdr:
+
 .global _dprintf
 _dprintf:
 
@@ -1692,6 +1698,15 @@ _mach_msg:
 
 .global _mach_msg_overwrite
 _mach_msg_overwrite:
+
+.global _mach_port_deallocate
+_mach_port_deallocate:
+
+.global _mach_task_self_
+_mach_task_self_:
+
+.global _mach_thread_self
+_mach_thread_self:
 
 .global _mach_voucher_deallocate
 _mach_voucher_deallocate:
@@ -3184,6 +3199,9 @@ _tanhl:
 .global _tanl
 _tanl:
 
+.global _task_threads
+_task_threads:
+
 .global _tcgetpgrp
 _tcgetpgrp:
 
@@ -3204,6 +3222,18 @@ _tgammaf:
 
 .global _tgammal
 _tgammal:
+
+.global _thread_get_state
+_thread_get_state:
+
+.global _thread_info
+_thread_info:
+
+.global _thread_resume
+_thread_resume:
+
+.global _thread_suspend
+_thread_suspend:
 
 .global _time
 _time:
@@ -3318,6 +3348,9 @@ _vfprintf:
 
 .global _vfscanf
 _vfscanf:
+
+.global _vm_deallocate
+_vm_deallocate:
 
 .global _vprintf
 _vprintf:

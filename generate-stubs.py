@@ -41,6 +41,11 @@ def generateStubs(sysroot, outfile, target):
         # Exported by libSystem, but declared in headers that are not part of
         # this minimal SDK:
         '_ioctl',           # <sys/ioctl.h>
+        '__NSGetExecutablePath',  # <mach-o/dyld.h>
+        '_dladdr',          # <dlfcn.h>
+        # <mach/mach.h>
+        '_mach_task_self_', '_mach_thread_self', '_mach_port_deallocate', '_vm_deallocate',
+        '_task_threads', '_thread_suspend', '_thread_resume', '_thread_get_state', '_thread_info',
         '___sincos_stret', '___sincosf_stret'  # newer <math.h>; called by LLVM-generated code
     }
 
