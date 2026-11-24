@@ -13,8 +13,140 @@ __Exit:
 .global __NSGetExecutablePath
 __NSGetExecutablePath:
 
+.global ___atomic_compare_exchange
+___atomic_compare_exchange:
+
+.global ___atomic_compare_exchange_1
+___atomic_compare_exchange_1:
+
+.global ___atomic_compare_exchange_2
+___atomic_compare_exchange_2:
+
+.global ___atomic_compare_exchange_4
+___atomic_compare_exchange_4:
+
+.global ___atomic_compare_exchange_8
+___atomic_compare_exchange_8:
+
+.global ___atomic_exchange
+___atomic_exchange:
+
+.global ___atomic_exchange_1
+___atomic_exchange_1:
+
+.global ___atomic_exchange_2
+___atomic_exchange_2:
+
+.global ___atomic_exchange_4
+___atomic_exchange_4:
+
+.global ___atomic_exchange_8
+___atomic_exchange_8:
+
+.global ___atomic_fetch_add_1
+___atomic_fetch_add_1:
+
+.global ___atomic_fetch_add_2
+___atomic_fetch_add_2:
+
+.global ___atomic_fetch_add_4
+___atomic_fetch_add_4:
+
+.global ___atomic_fetch_add_8
+___atomic_fetch_add_8:
+
+.global ___atomic_fetch_and_1
+___atomic_fetch_and_1:
+
+.global ___atomic_fetch_and_2
+___atomic_fetch_and_2:
+
+.global ___atomic_fetch_and_4
+___atomic_fetch_and_4:
+
+.global ___atomic_fetch_and_8
+___atomic_fetch_and_8:
+
+.global ___atomic_fetch_or_1
+___atomic_fetch_or_1:
+
+.global ___atomic_fetch_or_2
+___atomic_fetch_or_2:
+
+.global ___atomic_fetch_or_4
+___atomic_fetch_or_4:
+
+.global ___atomic_fetch_or_8
+___atomic_fetch_or_8:
+
+.global ___atomic_fetch_sub_1
+___atomic_fetch_sub_1:
+
+.global ___atomic_fetch_sub_2
+___atomic_fetch_sub_2:
+
+.global ___atomic_fetch_sub_4
+___atomic_fetch_sub_4:
+
+.global ___atomic_fetch_sub_8
+___atomic_fetch_sub_8:
+
+.global ___atomic_fetch_xor_1
+___atomic_fetch_xor_1:
+
+.global ___atomic_fetch_xor_2
+___atomic_fetch_xor_2:
+
+.global ___atomic_fetch_xor_4
+___atomic_fetch_xor_4:
+
+.global ___atomic_fetch_xor_8
+___atomic_fetch_xor_8:
+
+.global ___atomic_is_lock_free
+___atomic_is_lock_free:
+
+.global ___atomic_load
+___atomic_load:
+
+.global ___atomic_load_1
+___atomic_load_1:
+
+.global ___atomic_load_2
+___atomic_load_2:
+
+.global ___atomic_load_4
+___atomic_load_4:
+
+.global ___atomic_load_8
+___atomic_load_8:
+
+.global ___atomic_store
+___atomic_store:
+
+.global ___atomic_store_1
+___atomic_store_1:
+
+.global ___atomic_store_2
+___atomic_store_2:
+
+.global ___atomic_store_4
+___atomic_store_4:
+
+.global ___atomic_store_8
+___atomic_store_8:
+
 .global ___bzero
 ___bzero:
+
+.global ___chkstk_darwin
+___chkstk_darwin:
+
+.global ___clear_cache
+___clear_cache:
+
+.global ___clzti2
+___clzti2:
 
 .global ___darwin_check_fd_set
 ___darwin_check_fd_set:
@@ -31,8 +163,41 @@ ___darwin_fd_isset:
 .global ___darwin_fd_set
 ___darwin_fd_set:
 
+.global ___divti3
+___divti3:
+
+.global ___enable_execute_stack
+___enable_execute_stack:
+
 .global ___error
 ___error:
+
+.global ___extendhfsf2
+___extendhfsf2:
+
+.global ___fixdfti
+___fixdfti:
+
+.global ___fixsfti
+___fixsfti:
+
+.global ___fixunsdfti
+___fixunsdfti:
+
+.global ___fixunssfti
+___fixunssfti:
+
+.global ___floattidf
+___floattidf:
+
+.global ___floattisf
+___floattisf:
+
+.global ___floatuntidf
+___floatuntidf:
+
+.global ___floatuntisf
+___floatuntisf:
 
 .global ___fpclassify
 ___fpclassify:
@@ -42,6 +207,15 @@ ___fpclassifyd:
 
 .global ___fpclassifyf
 ___fpclassifyf:
+
+.global ___gcc_personality_v0
+___gcc_personality_v0:
+
+.global ___gnu_f2h_ieee
+___gnu_f2h_ieee:
+
+.global ___gnu_h2f_ieee
+___gnu_h2f_ieee:
 
 .global ___inf
 ___inf:
@@ -67,11 +241,26 @@ ___memmove_chk:
 .global ___memset_chk
 ___memset_chk:
 
+.global ___modti3
+___modti3:
+
+.global ___muldc3
+___muldc3:
+
+.global ___mulsc3
+___mulsc3:
+
 .global ___nan
 ___nan:
 
 .global ___opendir2
 ___opendir2:
+
+.global ___powidf2
+___powidf2:
+
+.global ___powisf2
+___powisf2:
 
 .global ___sigbits
 ___sigbits:
@@ -115,6 +304,18 @@ ___svfscanf:
 .global ___swbuf
 ___swbuf:
 
+.global ___truncdfhf2
+___truncdfhf2:
+
+.global ___truncsfhf2
+___truncsfhf2:
+
+.global ___udivmodti4
+___udivmodti4:
+
+.global ___udivti3
+___udivti3:
+
 .global ___ulock_wait
 ___ulock_wait:
 
@@ -123,6 +324,9 @@ ___ulock_wait2:
 
 .global ___ulock_wake
 ___ulock_wake:
+
+.global ___umodti3
+___umodti3:
 
 .global ___vsnprintf_chk
 ___vsnprintf_chk:
@@ -330,6 +534,24 @@ _atol:
 
 .global _atoll
 _atoll:
+
+.global _atomic_flag_clear
+_atomic_flag_clear:
+
+.global _atomic_flag_clear_explicit
+_atomic_flag_clear_explicit:
+
+.global _atomic_flag_test_and_set
+_atomic_flag_test_and_set:
+
+.global _atomic_flag_test_and_set_explicit
+_atomic_flag_test_and_set_explicit:
+
+.global _atomic_signal_fence
+_atomic_signal_fence:
+
+.global _atomic_thread_fence
+_atomic_thread_fence:
 
 .global _audit
 _audit:

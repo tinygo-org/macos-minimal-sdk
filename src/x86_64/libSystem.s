@@ -13,8 +13,191 @@ __Exit:
 .global __NSGetExecutablePath
 __NSGetExecutablePath:
 
+.global ___absvdi2
+___absvdi2:
+
+.global ___absvsi2
+___absvsi2:
+
+.global ___absvti2
+___absvti2:
+
+.global ___addvdi3
+___addvdi3:
+
+.global ___addvsi3
+___addvsi3:
+
+.global ___addvti3
+___addvti3:
+
+.global ___ashldi3
+___ashldi3:
+
+.global ___ashlti3
+___ashlti3:
+
+.global ___ashrdi3
+___ashrdi3:
+
+.global ___ashrti3
+___ashrti3:
+
+.global ___atomic_compare_exchange
+___atomic_compare_exchange:
+
+.global ___atomic_compare_exchange_1
+___atomic_compare_exchange_1:
+
+.global ___atomic_compare_exchange_2
+___atomic_compare_exchange_2:
+
+.global ___atomic_compare_exchange_4
+___atomic_compare_exchange_4:
+
+.global ___atomic_compare_exchange_8
+___atomic_compare_exchange_8:
+
+.global ___atomic_exchange
+___atomic_exchange:
+
+.global ___atomic_exchange_1
+___atomic_exchange_1:
+
+.global ___atomic_exchange_2
+___atomic_exchange_2:
+
+.global ___atomic_exchange_4
+___atomic_exchange_4:
+
+.global ___atomic_exchange_8
+___atomic_exchange_8:
+
+.global ___atomic_fetch_add_1
+___atomic_fetch_add_1:
+
+.global ___atomic_fetch_add_2
+___atomic_fetch_add_2:
+
+.global ___atomic_fetch_add_4
+___atomic_fetch_add_4:
+
+.global ___atomic_fetch_add_8
+___atomic_fetch_add_8:
+
+.global ___atomic_fetch_and_1
+___atomic_fetch_and_1:
+
+.global ___atomic_fetch_and_2
+___atomic_fetch_and_2:
+
+.global ___atomic_fetch_and_4
+___atomic_fetch_and_4:
+
+.global ___atomic_fetch_and_8
+___atomic_fetch_and_8:
+
+.global ___atomic_fetch_or_1
+___atomic_fetch_or_1:
+
+.global ___atomic_fetch_or_2
+___atomic_fetch_or_2:
+
+.global ___atomic_fetch_or_4
+___atomic_fetch_or_4:
+
+.global ___atomic_fetch_or_8
+___atomic_fetch_or_8:
+
+.global ___atomic_fetch_sub_1
+___atomic_fetch_sub_1:
+
+.global ___atomic_fetch_sub_2
+___atomic_fetch_sub_2:
+
+.global ___atomic_fetch_sub_4
+___atomic_fetch_sub_4:
+
+.global ___atomic_fetch_sub_8
+___atomic_fetch_sub_8:
+
+.global ___atomic_fetch_xor_1
+___atomic_fetch_xor_1:
+
+.global ___atomic_fetch_xor_2
+___atomic_fetch_xor_2:
+
+.global ___atomic_fetch_xor_4
+___atomic_fetch_xor_4:
+
+.global ___atomic_fetch_xor_8
+___atomic_fetch_xor_8:
+
+.global ___atomic_is_lock_free
+___atomic_is_lock_free:
+
+.global ___atomic_load
+___atomic_load:
+
+.global ___atomic_load_1
+___atomic_load_1:
+
+.global ___atomic_load_2
+___atomic_load_2:
+
+.global ___atomic_load_4
+___atomic_load_4:
+
+.global ___atomic_load_8
+___atomic_load_8:
+
+.global ___atomic_store
+___atomic_store:
+
+.global ___atomic_store_1
+___atomic_store_1:
+
+.global ___atomic_store_2
+___atomic_store_2:
+
+.global ___atomic_store_4
+___atomic_store_4:
+
+.global ___atomic_store_8
+___atomic_store_8:
+
 .global ___bzero
 ___bzero:
+
+.global ___chkstk_darwin
+___chkstk_darwin:
+
+.global ___clear_cache
+___clear_cache:
+
+.global ___clzdi2
+___clzdi2:
+
+.global ___clzsi2
+___clzsi2:
+
+.global ___clzti2
+___clzti2:
+
+.global ___cmpdi2
+___cmpdi2:
+
+.global ___cmpti2
+___cmpti2:
+
+.global ___ctzdi2
+___ctzdi2:
+
+.global ___ctzsi2
+___ctzsi2:
+
+.global ___ctzti2
+___ctzti2:
 
 .global ___darwin_check_fd_set
 ___darwin_check_fd_set:
@@ -31,8 +214,116 @@ ___darwin_fd_isset:
 .global ___darwin_fd_set
 ___darwin_fd_set:
 
+.global ___divdc3
+___divdc3:
+
+.global ___divdi3
+___divdi3:
+
+.global ___divsc3
+___divsc3:
+
+.global ___divti3
+___divti3:
+
+.global ___divxc3
+___divxc3:
+
+.global ___enable_execute_stack
+___enable_execute_stack:
+
 .global ___error
 ___error:
+
+.global ___extendhfsf2
+___extendhfsf2:
+
+.global ___ffsdi2
+___ffsdi2:
+
+.global ___ffsti2
+___ffsti2:
+
+.global ___fixdfdi
+___fixdfdi:
+
+.global ___fixdfti
+___fixdfti:
+
+.global ___fixsfdi
+___fixsfdi:
+
+.global ___fixsfti
+___fixsfti:
+
+.global ___fixunsdfdi
+___fixunsdfdi:
+
+.global ___fixunsdfsi
+___fixunsdfsi:
+
+.global ___fixunsdfti
+___fixunsdfti:
+
+.global ___fixunssfdi
+___fixunssfdi:
+
+.global ___fixunssfsi
+___fixunssfsi:
+
+.global ___fixunssfti
+___fixunssfti:
+
+.global ___fixunsxfdi
+___fixunsxfdi:
+
+.global ___fixunsxfsi
+___fixunsxfsi:
+
+.global ___fixunsxfti
+___fixunsxfti:
+
+.global ___fixxfdi
+___fixxfdi:
+
+.global ___fixxfti
+___fixxfti:
+
+.global ___floatdidf
+___floatdidf:
+
+.global ___floatdisf
+___floatdisf:
+
+.global ___floatdixf
+___floatdixf:
+
+.global ___floattidf
+___floattidf:
+
+.global ___floattisf
+___floattisf:
+
+.global ___floattixf
+___floattixf:
+
+.global ___floatundidf
+___floatundidf:
+
+.global ___floatundisf
+___floatundisf:
+
+.global ___floatundixf
+___floatundixf:
+
+.global ___floatuntidf
+___floatuntidf:
+
+.global ___floatuntisf
+___floatuntisf:
+
+.global ___floatuntixf
+___floatuntixf:
 
 .global ___fpclassify
 ___fpclassify:
@@ -43,6 +334,15 @@ ___fpclassifyd:
 .global ___fpclassifyf
 ___fpclassifyf:
 
+.global ___gcc_personality_v0
+___gcc_personality_v0:
+
+.global ___gnu_f2h_ieee
+___gnu_f2h_ieee:
+
+.global ___gnu_h2f_ieee
+___gnu_h2f_ieee:
+
 .global ___inf
 ___inf:
 
@@ -51,6 +351,12 @@ ___inff:
 
 .global ___infl
 ___infl:
+
+.global ___lshrdi3
+___lshrdi3:
+
+.global ___lshrti3
+___lshrti3:
 
 .global ___math_errhandling
 ___math_errhandling:
@@ -67,11 +373,92 @@ ___memmove_chk:
 .global ___memset_chk
 ___memset_chk:
 
+.global ___moddi3
+___moddi3:
+
+.global ___modti3
+___modti3:
+
+.global ___muldc3
+___muldc3:
+
+.global ___muldi3
+___muldi3:
+
+.global ___mulodi4
+___mulodi4:
+
+.global ___mulosi4
+___mulosi4:
+
+.global ___muloti4
+___muloti4:
+
+.global ___mulsc3
+___mulsc3:
+
+.global ___multi3
+___multi3:
+
+.global ___mulvdi3
+___mulvdi3:
+
+.global ___mulvsi3
+___mulvsi3:
+
+.global ___mulvti3
+___mulvti3:
+
+.global ___mulxc3
+___mulxc3:
+
 .global ___nan
 ___nan:
 
+.global ___negdi2
+___negdi2:
+
+.global ___negti2
+___negti2:
+
+.global ___negvdi2
+___negvdi2:
+
+.global ___negvsi2
+___negvsi2:
+
+.global ___negvti2
+___negvti2:
+
 .global ___opendir2$INODE64
 ___opendir2$INODE64:
+
+.global ___paritydi2
+___paritydi2:
+
+.global ___paritysi2
+___paritysi2:
+
+.global ___parityti2
+___parityti2:
+
+.global ___popcountdi2
+___popcountdi2:
+
+.global ___popcountsi2
+___popcountsi2:
+
+.global ___popcountti2
+___popcountti2:
+
+.global ___powidf2
+___powidf2:
+
+.global ___powisf2
+___powisf2:
+
+.global ___powixf2
+___powixf2:
 
 .global ___sigbits
 ___sigbits:
@@ -109,11 +496,44 @@ ___stdinp:
 .global ___stdoutp
 ___stdoutp:
 
+.global ___subvdi3
+___subvdi3:
+
+.global ___subvsi3
+___subvsi3:
+
+.global ___subvti3
+___subvti3:
+
 .global ___svfscanf
 ___svfscanf:
 
 .global ___swbuf
 ___swbuf:
+
+.global ___truncdfhf2
+___truncdfhf2:
+
+.global ___truncsfhf2
+___truncsfhf2:
+
+.global ___ucmpdi2
+___ucmpdi2:
+
+.global ___ucmpti2
+___ucmpti2:
+
+.global ___udivdi3
+___udivdi3:
+
+.global ___udivmoddi4
+___udivmoddi4:
+
+.global ___udivmodti4
+___udivmodti4:
+
+.global ___udivti3
+___udivti3:
 
 .global ___ulock_wait
 ___ulock_wait:
@@ -123,6 +543,12 @@ ___ulock_wait2:
 
 .global ___ulock_wake
 ___ulock_wake:
+
+.global ___umoddi3
+___umoddi3:
+
+.global ___umodti3
+___umodti3:
 
 .global ___vsnprintf_chk
 ___vsnprintf_chk:
@@ -330,6 +756,24 @@ _atol:
 
 .global _atoll
 _atoll:
+
+.global _atomic_flag_clear
+_atomic_flag_clear:
+
+.global _atomic_flag_clear_explicit
+_atomic_flag_clear_explicit:
+
+.global _atomic_flag_test_and_set
+_atomic_flag_test_and_set:
+
+.global _atomic_flag_test_and_set_explicit
+_atomic_flag_test_and_set_explicit:
+
+.global _atomic_signal_fence
+_atomic_signal_fence:
+
+.global _atomic_thread_fence
+_atomic_thread_fence:
 
 .global _audit
 _audit:
